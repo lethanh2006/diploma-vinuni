@@ -51,7 +51,7 @@ export const faq = [
             },
             {
                 ques: 'Toi muon hoi truong dai hoc buu chinh vien thong co phai truong chinh quy hay la truong dan lap? ',
-                ans: '<p>Học viện Công nghệ Bưu chính Viễn thông là trường đại học công lập trực thuộc Bộ Thông tin và Truyền thông. </p>',
+                ans: '<p>Học viện Chính sách và Phát triển là trường đại học công lập trực thuộc Bộ Kế hoạch và Đầu tư. </p>',
             },
             {
                 ques: 'NV1 có 2 ngành nếu e không đỗ ngành 1 thì xuống ngành 2. mà ngành 2 của e là ngành 1 của một bạn khác. vậy e có bị thiệt không ạ hay e với bạn ý được xét tuyển như nhau?',
@@ -147,7 +147,7 @@ export const faq = [
                 ans: '<p>Em học ngành Marketing của Học viện thì sau khi tốt nghiệp em có nhiều cơ hội  làm việc tại các doanh nghiệp trong nước và nước ngoài. Với lợi thế là những kiến thức nền tảng về ICT,  các em sẽ có lợi thế đặc biệt khi thi tuyển vào các vị trí marketing của các doanh nghiệp trong lĩnh vực ICT - một lĩnh vực năng động và tràn đầy cơ hội phát triển tại Việt Nam hiện nay thì em sẽ có nhiều lợi thế. Các vị trí quan trọng mà sinh viên ngành marketing của Học viện có thể đảm nhận tốt sau khi ra trường có thể là: Phụ trách hoạt động truyền thông marketing; Chuyên viên Nghiên cứu, phân tích và phát triển thị trường; Chuyên viên Marketing trực tuyến; Chuyên viên SEO; Chuyên viên Phân tích web; Chuyên viên Thương mại điện tử; Chuyên viên quan hệ công chúng và tổ chức sự kiến .... Bên cạnh đó, với nền tảng kiến thức lý thuyết và thực tiễn vững chắc về marketing và ICT, sau khi tốt nghiệp, sinh viên cũng có thể tự tạo lập doanh nghiệp và tìm kiếm cơ hội kinh doanh riêng cho bản thân hoặc trở thành các cán bộ nghiên cứu, cán bộ giảng dạy về marketing tại các Viện, trường Đại học… hoặc tiếp tục học cao hơn ở trình độ Cao học (quản trị kinh doanh, marketing) ở trong và ngoài nước</p>',
             },
             {
-                ques: 'Em rất muốn được vào học ở trường Học viện Công nghệ Bưu chính Viễn thông. Và em muốn vào học ngành marketing ở trường. Vậy cho e hỏi. Ngành marketing có học bằng chương trình tiếng anh không ạ? ',
+                ques: 'Em rất muốn được vào học ở trường Học viện Chính sách và Phát triển. Và em muốn vào học ngành marketing ở trường. Vậy cho e hỏi. Ngành marketing có học bằng chương trình tiếng anh không ạ? ',
                 ans: '<p>Hiện tại Học viện chưa triển khai chương trình đào tạo ngành Marketing bằng tiếng Anh. </p>',
             },
             {
@@ -155,7 +155,7 @@ export const faq = [
                 ans: '<p>Khối lượng kiến thức toàn khóa của ngành Marketing là 127 tín chỉ (không bao gồm Giáo dục thể chất, Giáo dục quốc phòng và các môn kỹ năng) học trong 4 năm. Trung bình mỗi năm các em sẽ học tập khoảng 32-35 tín chỉ tùy theo năng lực và kế hoạch của mỗi cá nhân. Em lưu ý là học tập theo tín chỉ thì em hoàn toàn có thể chủ động được việc đăng ký số lượng tín chỉ sao cho phù hợp với kế hoạch của em nhé</p>',
             },
             {
-                ques: 'Em thưa thầy nếu học ngành quản trị kinh doanh ở Học viện thì mai sau chỉ làm được ở Tập đoàn bưu chính, Viettel thôi ạ? Chúng em có thể làm được ở các công ty doanh nghiệp bình thường không liên quan đến viễn thông không? Em cảm ơn!',
+                ques: 'Em thưa thầy nếu học ngành quản trị kinh doanh ở Học viện thì mai sau chỉ làm được ở các Tập đoàn, doanh nghiệp lớn thôi ạ? Chúng em có thể làm được ở các công ty doanh nghiệp bình thường không liên quan đến viễn thông không? Em cảm ơn!',
                 ans: '<p>Em học ngành QTKD  của Học viện thì sau khi tốt nghiệp em có thể làm việc các công việc liên quan về kinh doanh ở bất kỳ doanh nghiệp nào. Đối với các doanh nghiệp viễn thông, công nghệ thông tin như VNPT, Viettel thì khi em tham gia ứng viên tuyển dụng thì bằng tốt nghiệp của em sẽ là LỢI THẾ vì em đã được trang bị kiến thức và kỹ năng sâu hơn về ngành Viễn thông, công nghệ thông tin. </p>',
             },
             {
@@ -200,15 +200,15 @@ export const faq = [
             },
             {
                 ques: 'Em muốn theo học ngàng an toàn thông tin. Thầy (cô) cho em xin phép được phép hỏi. Em còn đang bị mơ hồ ngành này học những j và cơ hội việc làm như thế nào ạ. Em cảm ơn thầy cô nhiều ạ!',
-                ans: '<p>Học viện Công nghệ Bưu chính Viễn thông là Trường Đại học đầu tiên được Bộ Giáo dục và Đào tạo cho phép tổ chức đào tạo ngành An toàn thông tin ở trình độ đại học hệ chính quy từ năm 2013; đồng thời Học viện cũng đã được Chính phủ chỉ định là một trong số rất ít cơ sở đào tạo trọng điểm về an toàn, an ninh thông tin theo Đề án của Quốc gia.<br/> Về kiến thức: Chương trình đào tạo trang bị cho sinh viên kiến thức chuyên sâu về An toàn thông tin như: các kỹ thuật mật mã, an toàn mạng máy tính, an toàn hệ điều hành, an toàn cơ sở dữ liệu, an toàn các ứng dụng Web và Internet, an toàn trong giao dịch và thương mại điện tử, các kỹ thuật tấn công và xâm nhập mạng, mô hình bảo vệ và các kỹ thuật phòng thủ chống tấn công đột nhập, lập trình an toàn, thiết kế các phần mềm và công cụ đảm bảo an toàn, quản lý và đánh giá điểm yếu, các kỹ thuật kiểm tra đánh giá an toàn, quản trị mạng an toàn, các vấn đề về chính sách, pháp luật và chuẩn hóa an toàn. <br/>Sinh viên ngành An toàn thông tin sau khi tốt nghiệp ra trường có khả năng làm việc tại các đơn vị/ bộ phận chuyên về công nghệ thông tin và mạng, cũng như các cơ quan, tổ chức, doanh nghiệp ứng dụng công nghệ thông tin như: các cơ quan chính phủ, các cơ quan thuộc các lĩnh vực tài chính, ngân hàng, bảo hiểm, viễn thông, năng lượng, dầu khí, thương mại, giao thông vận tải… với các vị trí công việc: Quản trị bảo mật máy chủ và mạng; Bảo mật cơ sở dữ liệu; Phân tích, tư vấn, thiết kế hệ thống thông tin đảm bảo an toàn; Kiểm tra, đánh giá an toàn thông tin cho mạng và hệ thống; Rà quét lỗ hổng, điểm yếu và xử lý sự cố an toàn thông tin; Lập trình và phát triển ứng dụng đảm bảo an toàn thông tin.</p > ',
+                ans: '<p>Học viện Chính sách và Phát triển là Trường Đại học đầu tiên được Bộ Giáo dục và Đào tạo cho phép tổ chức đào tạo ngành An toàn thông tin ở trình độ đại học hệ chính quy từ năm 2013; đồng thời Học viện cũng đã được Chính phủ chỉ định là một trong số rất ít cơ sở đào tạo trọng điểm về an toàn, an ninh thông tin theo Đề án của Quốc gia.<br/> Về kiến thức: Chương trình đào tạo trang bị cho sinh viên kiến thức chuyên sâu về An toàn thông tin như: các kỹ thuật mật mã, an toàn mạng máy tính, an toàn hệ điều hành, an toàn cơ sở dữ liệu, an toàn các ứng dụng Web và Internet, an toàn trong giao dịch và thương mại điện tử, các kỹ thuật tấn công và xâm nhập mạng, mô hình bảo vệ và các kỹ thuật phòng thủ chống tấn công đột nhập, lập trình an toàn, thiết kế các phần mềm và công cụ đảm bảo an toàn, quản lý và đánh giá điểm yếu, các kỹ thuật kiểm tra đánh giá an toàn, quản trị mạng an toàn, các vấn đề về chính sách, pháp luật và chuẩn hóa an toàn. <br/>Sinh viên ngành An toàn thông tin sau khi tốt nghiệp ra trường có khả năng làm việc tại các đơn vị/ bộ phận chuyên về công nghệ thông tin và mạng, cũng như các cơ quan, tổ chức, doanh nghiệp ứng dụng công nghệ thông tin như: các cơ quan chính phủ, các cơ quan thuộc các lĩnh vực tài chính, ngân hàng, bảo hiểm, viễn thông, năng lượng, dầu khí, thương mại, giao thông vận tải… với các vị trí công việc: Quản trị bảo mật máy chủ và mạng; Bảo mật cơ sở dữ liệu; Phân tích, tư vấn, thiết kế hệ thống thông tin đảm bảo an toàn; Kiểm tra, đánh giá an toàn thông tin cho mạng và hệ thống; Rà quét lỗ hổng, điểm yếu và xử lý sự cố an toàn thông tin; Lập trình và phát triển ứng dụng đảm bảo an toàn thông tin.</p > ',
             },
             {
                 ques: 'Em muốn theo học ngàng an toàn thông tin. Thầy (cô) cho em xin phép được phép hỏi. Em còn đang bị mơ hồ ngành này học những j và cơ hội việc làm như thế nào ạ. Em cảm ơn thầy cô nhiều ạ!',
-                ans: '<p>Học viện Công nghệ Bưu chính Viễn thông là Trường Đại học đầu tiên được Bộ Giáo dục và Đào tạo cho phép tổ chức đào tạo ngành An toàn thông tin ở trình độ đại học hệ chính quy từ năm 2013; đồng thời Học viện cũng đã được Chính phủ chỉ định là một trong số rất ít cơ sở đào tạo trọng điểm về an toàn, an ninh thông tin theo Đề án của Quốc gia.<br/> Về kiến thức: Chương trình đào tạo trang bị cho sinh viên kiến thức chuyên sâu về An toàn thông tin như: các kỹ thuật mật mã, an toàn mạng máy tính, an toàn hệ điều hành, an toàn cơ sở dữ liệu, an toàn các ứng dụng Web và Internet, an toàn trong giao dịch và thương mại điện tử, các kỹ thuật tấn công và xâm nhập mạng, mô hình bảo vệ và các kỹ thuật phòng thủ chống tấn công đột nhập, lập trình an toàn, thiết kế các phần mềm và công cụ đảm bảo an toàn, quản lý và đánh giá điểm yếu, các kỹ thuật kiểm tra đánh giá an toàn, quản trị mạng an toàn, các vấn đề về chính sách, pháp luật và chuẩn hóa an toàn. <br/>Sinh viên ngành An toàn thông tin sau khi tốt nghiệp ra trường có khả năng làm việc tại các đơn vị/ bộ phận chuyên về công nghệ thông tin và mạng, cũng như các cơ quan, tổ chức, doanh nghiệp ứng dụng công nghệ thông tin như: các cơ quan chính phủ, các cơ quan thuộc các lĩnh vực tài chính, ngân hàng, bảo hiểm, viễn thông, năng lượng, dầu khí, thương mại, giao thông vận tải… với các vị trí công việc: Quản trị bảo mật máy chủ và mạng; Bảo mật cơ sở dữ liệu; Phân tích, tư vấn, thiết kế hệ thống thông tin đảm bảo an toàn; Kiểm tra, đánh giá an toàn thông tin cho mạng và hệ thống; Rà quét lỗ hổng, điểm yếu và xử lý sự cố an toàn thông tin; Lập trình và phát triển ứng dụng đảm bảo an toàn thông tin.</p > ',
+                ans: '<p>Học viện Chính sách và Phát triển là Trường Đại học đầu tiên được Bộ Giáo dục và Đào tạo cho phép tổ chức đào tạo ngành An toàn thông tin ở trình độ đại học hệ chính quy từ năm 2013; đồng thời Học viện cũng đã được Chính phủ chỉ định là một trong số rất ít cơ sở đào tạo trọng điểm về an toàn, an ninh thông tin theo Đề án của Quốc gia.<br/> Về kiến thức: Chương trình đào tạo trang bị cho sinh viên kiến thức chuyên sâu về An toàn thông tin như: các kỹ thuật mật mã, an toàn mạng máy tính, an toàn hệ điều hành, an toàn cơ sở dữ liệu, an toàn các ứng dụng Web và Internet, an toàn trong giao dịch và thương mại điện tử, các kỹ thuật tấn công và xâm nhập mạng, mô hình bảo vệ và các kỹ thuật phòng thủ chống tấn công đột nhập, lập trình an toàn, thiết kế các phần mềm và công cụ đảm bảo an toàn, quản lý và đánh giá điểm yếu, các kỹ thuật kiểm tra đánh giá an toàn, quản trị mạng an toàn, các vấn đề về chính sách, pháp luật và chuẩn hóa an toàn. <br/>Sinh viên ngành An toàn thông tin sau khi tốt nghiệp ra trường có khả năng làm việc tại các đơn vị/ bộ phận chuyên về công nghệ thông tin và mạng, cũng như các cơ quan, tổ chức, doanh nghiệp ứng dụng công nghệ thông tin như: các cơ quan chính phủ, các cơ quan thuộc các lĩnh vực tài chính, ngân hàng, bảo hiểm, viễn thông, năng lượng, dầu khí, thương mại, giao thông vận tải… với các vị trí công việc: Quản trị bảo mật máy chủ và mạng; Bảo mật cơ sở dữ liệu; Phân tích, tư vấn, thiết kế hệ thống thông tin đảm bảo an toàn; Kiểm tra, đánh giá an toàn thông tin cho mạng và hệ thống; Rà quét lỗ hổng, điểm yếu và xử lý sự cố an toàn thông tin; Lập trình và phát triển ứng dụng đảm bảo an toàn thông tin.</p > ',
             },
             {
                 ques: 'Thầy cho em hỏi nghành đào tạo an toàn thông tin của trường đã có nhiều thành tựu lớn chưa ạ, sau này em có thể đi thực tập tại đâu và cơ hội để em học hỏi tại trường mình lớn chứ ạ',
-                ans: '<p>Học viện Công nghệ Bưu chính Viễn thông là Trường Đại học đầu tiên được Bộ Giáo dục & Đào tạo cho phép tổ chức đào tạo ngành An toàn thông tin ở trình độ đại học hệ chính quy từ năm 2013; đồng thời Học viện cũng đã được Chính phủ chỉ định là một trong số rất ít cơ sở đào tạo trọng điểm về an toàn, an ninh thông tin theo Đề án của Quốc gia.</p><br/><p>Năm cuối các em thực tập tại trường và các doanh nghiệp Công nghệ thông tin mà Học viện có mối quan hệ do đó cơ hội để các em học hỏi tại Học viện cũng như các doanh nghiệp bên ngoài là rất lớn</p>',
+                ans: '<p>Học viện Chính sách và Phát triển là Trường Đại học đầu tiên được Bộ Giáo dục & Đào tạo cho phép tổ chức đào tạo ngành An toàn thông tin ở trình độ đại học hệ chính quy từ năm 2013; đồng thời Học viện cũng đã được Chính phủ chỉ định là một trong số rất ít cơ sở đào tạo trọng điểm về an toàn, an ninh thông tin theo Đề án của Quốc gia.</p><br/><p>Năm cuối các em thực tập tại trường và các doanh nghiệp Công nghệ thông tin mà Học viện có mối quan hệ do đó cơ hội để các em học hỏi tại Học viện cũng như các doanh nghiệp bên ngoài là rất lớn</p>',
             },
             {
                 ques: 'Thưa thầy (cô), theo như em biết thì trường có đào tạo 2 ngành là “Công nghệ đa phương tiện” và “Truyền thông đa phương tiện” , nhưng em chưa thực sự hiểu được sự khác nhau giữa 2 ngành này, vậy kính mong thầy (cô) có thể giúp em phân biệt được sự khác nhau giữa 2 ngành này ạ . Em xin trân trọng cảm ơn!',
@@ -231,7 +231,7 @@ export const faq = [
                 ans: '<p>Ngành Truyền thông đa phương tiện, thuộc nhóm ngành báo chí truyền thông. Các em được đào tạo để sau này làm việc trong lĩnh vực báo chí (đặc biệt là báo điện tử, báo hình, báo tiếng) và lĩnh vực truyền thông (Quảng cáo, tổ chức sự kiện, truyền thông cho các Tập đoàn, doanh nghiệp…) Như vậy ngoài kiến thức chuyên môn về báo chí, truyền thông các em sẽ được đào tạo về công nghệ đa phương tiện như công cụ để hành nghề thôi. Như vậy, vào học ngành này, các em không nhất thiết phải vẽ giỏi đâu. Các em yên tâm để đăng ký nhé.</p>',
             },
             {
-                ques: 'Em là con gái. Mà em nghe nói con gái học bưu chính viễn thông khá vất vả.Nếu em thi khoa công nghệ đa phương tiện thì sau này làm gì ạ?',
+                ques: 'Em là con gái. Mà em nghe nói con gái học Chính sách và Phát triển khá vất vả.Nếu em thi khoa công nghệ đa phương tiện thì sau này làm gì ạ?',
                 ans: '<p>Sinh viên tốt nghiệp ngành Công nghệ đa phương tiện có thể đảm nhận các vị trí công việc: - Chuyên viên phát triển ứng dụng tương tác đa phương tiện (Game, Web, ứng dụng di động, dịch vụ giá trị gia tăng trên mạng viễn thông, các hệ thống thực tại ảo,…) - Chuyên viên thiết kế nội dung đa phương tiện (đồ họa 2D/3D, đồ họa Game, hoạt hình, bài giảng e-Learning, quảng cáo,…)</p>',
             },
             {
@@ -256,7 +256,7 @@ export const faq = [
             },
             {
                 ques: 'Học an toàn thông tin được cấp văn bằng đại học chính quy đúng ko ạ? Với cả an toàn thông tin có phải thế mạnh của trường ko?',
-                ans: '<p>Sau khi học xong em sẽ được cấp bằng Đại học chính quy. Ngành ATTT là một trong các ngành có thế mạnh của Học viện vì Học viện Công nghệ Bưu chính Viễn thông là Trường Đại học đầu tiên được Bộ Giáo dục & Đào tạo cho phép tổ chức đào tạo ngành An toàn thông tin ở trình độ đại học hệ chính quy từ năm 2013; đồng thời Học viện cũng đã được Chính phủ chỉ định là một trong số rất ít cơ sở đào tạo trọng điểm về an toàn, an ninh thông tin theo Đề án của Quốc gia</p>',
+                ans: '<p>Sau khi học xong em sẽ được cấp bằng Đại học chính quy. Ngành ATTT là một trong các ngành có thế mạnh của Học viện vì Học viện Chính sách và Phát triển là Trường Đại học đầu tiên được Bộ Giáo dục & Đào tạo cho phép tổ chức đào tạo ngành An toàn thông tin ở trình độ đại học hệ chính quy từ năm 2013; đồng thời Học viện cũng đã được Chính phủ chỉ định là một trong số rất ít cơ sở đào tạo trọng điểm về an toàn, an ninh thông tin theo Đề án của Quốc gia</p>',
             },
             {
                 ques: 'Học viện cho phép đăng kí bao nhiêu ngành vậy ạ? Em cảm ơn',
@@ -337,7 +337,7 @@ export const faq = [
         title: 'CÁC CÂU HỎI VỀ CHẾ ĐỘ ƯU TIÊN',
         content: [
             {
-                ques: 'Cho em hỏi là Học viện Bưu chính Viễn thông xét tuyển thì có giới hạn khu vực không ạ? Em nghe nói Học viện không xét tuyển khu vực 2 ạ? ',
+                ques: 'Cho em hỏi là Học viện Chính sách và Phát triển xét tuyển thì có giới hạn khu vực không ạ? Em nghe nói Học viện không xét tuyển khu vực 2 ạ? ',
                 ans: '<p>Học viện không giới hạn, phân biệt khu vực hay đối tượng ưu tiên. Các thí sinh đã tham dự thi tốt nghiệp trung học phổ thông tại điểm thi do các trường đại học chủ trì đều có thể tham gia xét tuyển đại học, cao đẳng hệ chính quy tại Học viện.</p>',
             },
             {
@@ -406,7 +406,7 @@ export const faq = [
                 ans: '<p>Các hoạt động ngoại khóa cho sinh viên được tổ chức rất nhiều cho sinh viên vào các dịp ngày Sinh viên Việt Nam, ngày thành lập Đoàn TNCS Hồ Chí Minh, đầu kỳ học, … Ngoài ra, Học viện có hàng chục Câu lạc bộ sinh viên như CLB văn hóa nghệ thuật, CLB Tình nguyện, CLB Multimedia, CLB S4C, … khi tham gia các CLB này, SV được tham gia và trực tiếp tổ chức các hoạt động ngoại khóa cho sinh viên để tăng cường kỹ năng mềm của bản thân</p>',
             },
             {
-                ques: 'Em sinh năm 2000. Năm vừa rồi e có học bên giao thông vận tải và hoàn thành chứng chỉ quốc phòng. Vậy khi em trúng tuyển và học tại bưu chính thì có cần phải học lại quốc phòng k ạ? Em cảm ơn!',
+                ques: 'Em sinh năm 2000. Năm vừa rồi e có học bên giao thông vận tải và hoàn thành chứng chỉ quốc phòng. Vậy khi em trúng tuyển và học tại Học viện thì có cần phải học lại quốc phòng k ạ? Em cảm ơn!',
                 ans: '<p>Sinh viên đã có chứng chỉ GDQP rồi thì sẽ được miễn không phải đi học và đóng học phí học phần quân sự (GDQP) nữa. Đầu kỳ học, sinh viên làm đơn xin miễn học miễn thi học phần đó tại Văn phòng một cửa</p>',
             },
             {
@@ -418,8 +418,8 @@ export const faq = [
                 ans: '<p>Học viện chỉ có một hệ đào tạo đại học chính quy (không có trong hay ngoài ngân sách)</p>',
             },
             {
-                ques: 'Cô ơi cho e hỏi trường bưu chính còn hệ dân sự như mấy khoá trước không ạ.e xem điểm chuẩn năm 2019 khoa cntt là bao nhiêu ạ',
-                ans: '<p>Học viện Công nghệ Bưu chính Viễn thông là trường đại học công lập trực thuộc Bộ Thông tin và Truyền thông. Do đó chỉ có một hệ đào tạo chính quy, không có hệ dân sự hay quân sự em nhé. Để xem điểm chuẩn các năm trước, em tham khảo tại https://portal.ptit.edu.vn/tuyensinh/nam-2019/</p>',
+                ques: 'Cô ơi cho e hỏi Học viện còn hệ dân sự như mấy khoá trước không ạ.e xem điểm chuẩn năm 2019 khoa cntt là bao nhiêu ạ',
+                ans: '<p>Học viện Chính sách và Phát triển là trường đại học công lập trực thuộc Bộ Kế hoạch và Đầu tư. Do đó chỉ có một hệ đào tạo chính quy, không có hệ dân sự hay quân sự em nhé. Để xem điểm chuẩn các năm trước, em tham khảo tại https://portal.ptit.edu.vn/tuyensinh/nam-2019/</p>',
             },
             {
                 ques: 'Em muốn được ở kí túc xá sinh viên thì cần điều kiện gì ạ? Vì kí túc chỉ có 200 chổ',
@@ -433,7 +433,7 @@ export const faq1 = [
         title: 'GIỚI THIỆU',
         content: (
             <div>
-                <h1 style={{ color: '#D10000', textAlign: 'center', fontSize: '22px', marginTop: '21px' }}>KHOA CÔNG NGHỆ THÔNG TIN 1 HỌC VIỆN CÔNG NGHỆ BƯU CHÍNH VIỄN THÔNG</h1>
+                <h1 style={{ color: '#D10000', textAlign: 'center', fontSize: '22px', marginTop: '21px' }}>KHOA CÔNG NGHỆ THÔNG TIN 1 HỌC VIỆN CHÍNH SÁCH VÀ PHÁT TRIỂN</h1>
                 <div style={{ marginLeft: '20px', fontSize: '16px', color: '#343d48' }}>
                     <table border="1" >
                         <tbody style={{ marginLeft: '25px', textAlign: 'justify' }}><strong>
@@ -564,7 +564,7 @@ export const faq1 = [
         content: (
             <div>
                 <header class="the-article-header">
-                    <h1 class="the-article-title" style={{ color: '#D10000', marginTop: '21px', fontSize: '22px', textAlign: 'center' }}>GẦN 93% SINH VIÊN HỌC VIỆN CÔNG NGHỆ BƯU CHÍNH VIỄN THÔNG CÓ VIỆC LÀM</h1>
+                    <h1 class="the-article-title" style={{ color: '#D10000', marginTop: '21px', fontSize: '22px', textAlign: 'center' }}>GẦN 93% SINH VIÊN HỌC VIỆN CHÍNH SÁCH VÀ PHÁT TRIỂN CÓ VIỆC LÀM</h1>
                 </header>
                 <section style={{ fontSize: '16px', marginLeft: '20px', color: '#343d48' }}>
                     <p class="the-article-summary">Với tỷ lệ sinh vi&ecirc;n ra trường c&oacute; việc l&agrave;m sau 6 th&aacute;ng l&agrave; 92,7%, Học viện C&ocirc;ng nghệ Bưu ch&iacute;nh Viễn th&ocirc;ng đ&atilde; vượt qua tỷ lệ 91% của ĐH B&aacute;ch khoa H&agrave; Nội.</p>

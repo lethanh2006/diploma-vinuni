@@ -120,8 +120,8 @@ const KetQuaVanBang = ({ thongTinTraCuu = [] }) => {
             xmlns="http://www.w3.org/2000/svg"
             style={{ flex: "none", order: 1, flexGrow: 0 }}
           >
-            <path d="M22.6666 22L28 27.3333" stroke="#BC2626" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-            <circle cx="14.6667" cy="14.6667" r="10.6667" stroke="#BC2626" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M22.6666 22L28 27.3333" stroke="#1461C8" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+            <circle cx="14.6667" cy="14.6667" r="10.6667" stroke="#1461C8" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </h3>
         {isEmpty ? (

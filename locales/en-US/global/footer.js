@@ -1,5 +1,5 @@
 module.exports = {
-  academy_name: "Posts and Telecommunications Institute of Technology",
+  academy_name: "Academy Of Policy And Development",
   system_title: "Diploma & Certificate Verification System",
   phone_label: "Contact Hotline",
   email_label: "Contact Email",
@@ -12,7 +12,7 @@ module.exports = {
   hcm_campus_label: "Ho Chi Minh City Training Campus",
   hcm_campus_addr: "97 Man Thien St, Tang Nhon Phu Ward, Ho Chi Minh City",
   quick_links: "Quick Links",
-  copyright: "HocVienCongNgheBuuChinhVienThong, All rights reserved ® Posts and Telecommunications Institute of Technology holds copyright of content on this website",
-  ptit_portal: "PTIT Information Portal",
-  ptit_portal_full: "Portal of Posts and Telecommunications Institute of Technology"
+  copyright: "AcademyOfPolicyAndDevelopment, All rights reserved ® Academy of Policy and Development holds copyright of content on this website",
+  ptit_portal: "APD Information Portal",
+  ptit_portal_full: "Portal of Academy of Policy and Development"
 };

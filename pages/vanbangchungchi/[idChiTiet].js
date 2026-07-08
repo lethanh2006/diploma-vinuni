@@ -96,7 +96,7 @@ const ChiTietVanBang = () => {
               >
                 <path
                   d="M22.667 22L28.0003 27.3333"
-                  stroke="#BC2626"
+                  stroke="#1461C8"
                   strokeWidth="3"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -105,7 +105,7 @@ const ChiTietVanBang = () => {
                   cx="14.6667"
                   cy="14.6667"
                   r="10.6667"
-                  stroke="#BC2626"
+                  stroke="#1461C8"
                   strokeWidth="3"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -204,8 +204,8 @@ const ChiTietVanBang = () => {
                     <Descriptions.Item label={t("detail.issue_date")}>
                       {record?.quyetDinh?.ngayBanHanh
                         ? moment(record.quyetDinh.ngayBanHanh).format(
-                            "DD/MM/YYYY",
-                          )
+                          "DD/MM/YYYY",
+                        )
                         : "--"}
                     </Descriptions.Item>
                     <Descriptions.Item label={t("detail.summary")} span={2}>
@@ -222,11 +222,11 @@ const ChiTietVanBang = () => {
 
                 const elements = templateElements.length
                   ? templateElements.map((e) => ({
-                      ...e,
-                      value: dataElements.find(
-                        (d) => d.headerName === e.headerName,
-                      )?.value,
-                    }))
+                    ...e,
+                    value: dataElements.find(
+                      (d) => d.headerName === e.headerName,
+                    )?.value,
+                  }))
                   : dataElements;
 
                 const valuedElements = elements

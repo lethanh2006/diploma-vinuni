@@ -38,7 +38,7 @@ const DoiNgu = ({ button, buttonWrapper }) => {
       const data = _.get(response, "data.data", []);
       setRelate(data);
     })();
-    return () => {};
+    return () => { };
   }, []);
   //   console.log(response, "path post");
   return (
@@ -47,7 +47,7 @@ const DoiNgu = ({ button, buttonWrapper }) => {
         <Container>
           {/* <TitleContainer style={{ color: '#C13726', marginTop: '50' }}>
 						<p style={{ marginTop: '50', fontSize: '30px', lineHeight: '20px' }}>
-							HỌC VIỆN CÔNG NGHỆ BƯU CHÍNH VIỄN THÔNG
+							HỌC VIỆN CHÍNH SÁCH VÀ PHÁT TRIỂN
 						</p>
 						<p style={{ color: '#1E1E1E', fontSize: '26px' }}>ĐỘI NGŨ CÁN BỘ - PHÒNG ĐÀO TẠO</p>
 					</TitleContainer>
@@ -62,7 +62,7 @@ const DoiNgu = ({ button, buttonWrapper }) => {
                 margin: "0 0 10px",
               }}
             >
-              HỌC VIỆN CÔNG NGHỆ BƯU CHÍNH VIỄN THÔNG
+              HỌC VIỆN CHÍNH SÁCH VÀ PHÁT TRIỂN
             </p>
             <p
               style={{
@@ -155,7 +155,7 @@ const DoiNgu = ({ button, buttonWrapper }) => {
                     xs={24}
                     sm={12}
                     md={12}
-                    // style={{ padding: '10px 45px' }}
+                  // style={{ padding: '10px 45px' }}
                   >
                     <ContainerCardDN>
                       <Card

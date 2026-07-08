@@ -17,7 +17,7 @@ import { hostingTheme } from "./hosting";
 import { ContentWrapper, GlobalStyle } from "./hosting.style";
 
 const name = "TomCatJS";
-export const siteTitle = "Tuyển sinh PTIT";
+export const siteTitle = "Tuyển sinh Học viện Chính sách và Phát triển";
 
 
 export default function Layout({ children, home }) {
@@ -39,11 +39,11 @@ export default function Layout({ children, home }) {
         <link rel="prerender" href="https://tuyensinh.ptit.edu.vn/" />
         <link />
         <title>
-          HỌC VIỆN CÔNG NGHỆ BƯU CHÍNH VIỄN THÔNG, CỔNG THÔNG TIN PHÒNG ĐÀO TẠO
+          HỌC VIỆN CHÍNH SÁCH VÀ PHÁT TRIỂN, CỔNG THÔNG TIN PHÒNG ĐÀO TẠO
         </title>
         <meta
           name="Description"
-          content="HỌC VIỆN CÔNG NGHỆ BƯU CHÍNH VIỄN THÔNG, CỔNG THÔNG TIN PHÒNG ĐÀO TẠO"
+          content="HỌC VIỆN CHÍNH SÁCH VÀ PHÁT TRIỂN, CỔNG THÔNG TIN PHÒNG ĐÀO TẠO"
         />
         <meta name="theme-color" content="#eb4d4b" />
         <link
@@ -54,7 +54,7 @@ export default function Layout({ children, home }) {
         />
         <meta
           name="description"
-          content="HỌC VIỆN CÔNG NGHỆ BƯU CHÍNH VIỄN THÔNG CỔNG THÔNG TIN ĐÀO TẠO"
+          content="HỌC VIỆN CHÍNH SÁCH VÀ PHÁT TRIỂN CỔNG THÔNG TIN ĐÀO TẠO"
         />
         <meta property="og:image" content={logo} />
         <meta name="og:title" content={siteTitle} />
@@ -81,7 +81,7 @@ export default function Layout({ children, home }) {
                 style={{
                   float: "right",
                   margin: 20,
-                  backgroundColor: "#D10000",
+                  backgroundColor: "#1461C8",
                   borderRadius: "40%",
                 }}
                 onClick={scrollToTop}

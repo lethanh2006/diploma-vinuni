@@ -1,5 +1,5 @@
 module.exports = {
-  academy_name: "Học viện Công nghệ Bưu chính Viễn thông",
+  academy_name: "Học viện Chính sách và Phát triển",
   system_title: "Hệ thống tra cứu văn bằng chứng chỉ",
   phone_label: "Số điện thoại liên hệ",
   email_label: "Email liên hệ",
@@ -12,7 +12,7 @@ module.exports = {
   hcm_campus_label: "Cơ sở đào tạo tại TP Hồ Chí Minh",
   hcm_campus_addr: "97 Man Thiện, P. Tăng Nhơn Phú, TP Hồ Chí Minh",
   quick_links: "Đường dẫn liên kết",
-  copyright: "HocVienCongNgheBuuChinhVienThong, All rights reserved ® Học viện Công nghệ Bưu chính Viễn thông giữ bản quyền nội dung trên website này",
-  ptit_portal: "Cổng thông tin điện tử PTIT",
-  ptit_portal_full: "Cổng thông tin điện tử Học viện Công nghệ Bưu chính Viễn thông"
+  copyright: "HocVienChinhSachVaPhatTrien, All rights reserved ® Học viện Chính sách và Phát triển giữ bản quyền nội dung trên website này",
+  ptit_portal: "Cổng thông tin điện tử APD",
+  ptit_portal_full: "Cổng thông tin điện tử Học viện Chính sách và Phát triển"
 };

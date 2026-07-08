@@ -38,15 +38,15 @@ const TinTuc = ({ dataDeAn, dataMucLuc }) => {
   return (
     <>
       <NextSeo
-        title="Đề án tuyển sinh học viện công nghệ bưu chính viễn ghông năm 2021"
-        description="Thông tin chi tiết về đề án tuyển sinh Học viện Công nghệ Bưu chính Viễn thông"
+        title="Đề án tuyển sinh Học viện Chính sách và Phát triển năm 2021"
+        description="Thông tin chi tiết về đề án tuyển sinh Học viện Chính sách và Phát triển"
         canonical="https://daotao.aisenote.com/"
         openGraph={{
           url: `https://daotao.aisenote.com/`,
           title:
-            "Đề án tuyển sinh Học viện Công nghệ Bưu chính Viễn thông năm 2021",
+            "Đề án tuyển sinh Học viện Chính sách và Phát triển năm 2021",
           description:
-            "Thông tin chi tiết về đề án tuyển sinh Học viện Công nghệ Bưu chính Viễn thông",
+            "Thông tin chi tiết về đề án tuyển sinh Học viện Chính sách và Phát triển",
           images: [
             {
               url: bgNganhHOc,
@@ -56,7 +56,7 @@ const TinTuc = ({ dataDeAn, dataMucLuc }) => {
             },
           ],
           site_name:
-            "HỌC VIỆN CÔNG NGHỆ BƯU CHÍNH VIỄN THÔNG CỔNG THÔNG TIN ĐÀO TẠO",
+            "HỌC VIỆN CHÍNH SÁCH VÀ PHÁT TRIỂN CỔNG THÔNG TIN ĐÀO TẠO",
         }}
         twitter={{
           handle: "@handle",
@@ -95,7 +95,7 @@ const TinTuc = ({ dataDeAn, dataMucLuc }) => {
                   <Divider />
                 </div>
                 <h4 style={{ fontSize: "calc(1vw + 10px)", color: "#D10000" }}>
-                  "Đề án tuyển sinh Học viện Công nghệ bưu chính viễn thông năm
+                  "Đề án tuyển sinh Học viện Chính sách và Phát triển năm
                   2021"
                 </h4>
 

@@ -49,7 +49,7 @@ const ChucNangNhiemVu = () => {
           <div>
             <Row>
               {/* <h2 style={{ color: '#D13E32', textAlign: 'center', fontsize: '22px' }}>
-              HỌC VIỆN CÔNG NGHỆ BƯU CHÍNH VIỄN THÔNG
+              HỌC VIỆN CHÍNH SÁCH VÀ PHÁT TRIỂN
             </h2>
             <h2 style={{ color: '##1D1F21', textAlign: 'center', fontsize: '22px' }}>
               PHÒNG ĐÀO TẠO
@@ -63,7 +63,7 @@ const ChucNangNhiemVu = () => {
                   margin: "0 0 10px",
                 }}
               >
-                HỌC VIỆN CÔNG NGHỆ BƯU CHÍNH VIỄN THÔNG
+                HỌC VIỆN CHÍNH SÁCH VÀ PHÁT TRIỂN
               </p>
               <p
                 style={{

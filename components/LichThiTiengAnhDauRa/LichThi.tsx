@@ -38,7 +38,7 @@ const LichThi = ({}) => {
       last: " - TIẾNG ANH",
     },
     content:
-      "Do ảnh hưởng của đại dịch Covid - 19 đã khiến cho quá trình đăng ký và thi chứng chỉ tiếng anh TOEIC bị gián đoạn.Học viện Công nghệ Bưu chính Viễn thông thông báo điều chỉnh thời gian thi Chuẩn đầu ra Tiếng Anh Đợt 2 năm 2020 như sau:",
+      "Do ảnh hưởng của đại dịch Covid - 19 đã khiến cho quá trình đăng ký và thi chứng chỉ tiếng anh TOEIC bị gián đoạn.Học viện Chính sách và Phát triển thông báo điều chỉnh thời gian thi Chuẩn đầu ra Tiếng Anh Đợt 2 năm 2020 như sau:",
   };
   // const { data } = this.props;
   const { name, content, title } = data;

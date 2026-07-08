@@ -101,13 +101,13 @@ const NganhHoc = ({ dataFetch, params }) => {
     <>
       <NextSeo
         title={data[0]?.tenNganh}
-        description="Thông tin chi tiết về các ngành học tại Học viện Công nghệ Bưu chính Viễn thông"
+        description="Thông tin chi tiết về các ngành học tại Học viện Chính sách và Phát triển"
         canonical="https://daotao.aisenote.com/"
         openGraph={{
           url: `https://daotao.aisenote.com/nganhhoc/${namO?.maNganh}`,
           title: data[0]?.tenNganh,
           description:
-            "Thông tin chi tiết về các ngành học tại Học viện Công nghệ Bưu chính Viễn thông",
+            "Thông tin chi tiết về các ngành học tại Học viện Chính sách và Phát triển",
           images: [
             {
               url: bgNganhHOc,
@@ -117,7 +117,7 @@ const NganhHoc = ({ dataFetch, params }) => {
             },
           ],
           site_name:
-            "HỌC VIỆN CÔNG NGHỆ BƯU CHÍNH VIỄN THÔNG CỔNG THÔNG TIN ĐÀO TẠO",
+            "HỌC VIỆN CHÍNH SÁCH VÀ PHÁT TRIỂN CỔNG THÔNG TIN ĐÀO TẠO",
         }}
         twitter={{
           handle: "@handle",

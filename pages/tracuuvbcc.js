@@ -54,7 +54,7 @@ const TraCuuVanBangChungChi = (props) => {
   const tieuDeKQ = props.tieuDe;
   const heroBackgroundStyle = {
     background: `
-      linear-gradient(98.21deg, rgba(255, 255, 255, 0.6) 3.66%, rgba(255, 210, 210, 0.6) 91.93%),
+      linear-gradient(98.21deg, rgba(255, 255, 255, 0.6) 3.66%, rgba(200, 222, 255, 0.6) 91.93%),
       linear-gradient(78.64deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.2) 95.68%),
       linear-gradient(180deg, rgba(255, 255, 255, 0.42) 30.19%, rgba(255, 255, 255, 0) 100%),
       url(${bgtracuu})
