@@ -50,28 +50,30 @@ const FormTraCuuVBCC = (props) => {
         <Form onSubmit={handleSubmit} colon={false} className="vbcc-form">
           <Card
             style={{
-              borderRadius: 8,
-              backgroundColor: "rgba(255, 255, 255, 0.13)",
-              backdropFilter: "blur(8px)",
-              WebkitBackdropFilter: "blur(8px)",
+              borderRadius: 16,
+              backgroundColor: "rgba(255, 255, 255, 0.15)",
+              border: "2px solid rgba(255, 255, 255, 0.15)",
+              backdropFilter: "blur(6px)",
+              WebkitBackdropFilter: "blur(6px)",
             }}
-            // title={
-            //   <center>
-            //     <span>
-            //       <img src={capbangdiemsohieu} style={{ padding: 8 }} />
-            //       <b>Tra cứu thông tin văn bằng</b>
-            //     </span>
-            //   </center>
-            // }
+            bodyStyle={{ padding: "24px" }}
+          // title={
+          //   <center>
+          //     <span>
+          //       <img src={capbangdiemsohieu} style={{ padding: 8 }} />
+          //       <b>Tra cứu thông tin văn bằng</b>
+          //     </span>
+          //   </center>
+          // }
           >
             <Row gutter={[12, 2]}>
               <Col xs={24} md={8}>
                 <Form.Item
-                  label={<span style={{ fontSize: "15px" }}>{t("index.form.fullname")}</span>}
+                  label={<span>{t("index.form.fullname")}</span>}
                 >
                   {getFieldDecorator("hoTen")(
                     <Input
-                      style={{ fontSize: "15px" }}
+                      style={{ fontSize: "14px" }}
                       size="large"
                       placeholder={t("index.form.enter_fullname")}
                     />,
@@ -80,12 +82,12 @@ const FormTraCuuVBCC = (props) => {
               </Col>
               <Col xs={24} md={8}>
                 <Form.Item
-                  label={<span style={{ fontSize: "15px" }}>{t("index.form.dob")}</span>}
+                  label={<span>{t("index.form.dob")}</span>}
                 >
                   {getFieldDecorator("ngaySinh")(
                     <DatePicker
                       size="large"
-                      style={{ width: "100%", fontSize: "15px" }}
+                      style={{ width: "100%", fontSize: "14px" }}
                       format={"DD/MM/YYYY"}
                       placeholder={t("index.form.select_dob")}
                     />,
@@ -94,11 +96,11 @@ const FormTraCuuVBCC = (props) => {
               </Col>
               <Col xs={24} md={8}>
                 <Form.Item
-                  label={<span style={{ fontSize: "15px" }}>{t("index.form.cccd")}</span>}
+                  label={<span>{t("index.form.cccd")}</span>}
                 >
                   {getFieldDecorator("cccd")(
                     <Input
-                      style={{ fontSize: "15px" }}
+                      style={{ fontSize: "14px" }}
                       size="large"
                       placeholder={t("index.form.enter_cccd")}
                     />,
@@ -110,11 +112,11 @@ const FormTraCuuVBCC = (props) => {
             <Row gutter={[12, 2]}>
               <Col xs={24} md={8}>
                 <Form.Item
-                  label={<span style={{ fontSize: "15px" }}>{t("index.form.student_id")}</span>}
+                  label={<span>{t("index.form.student_id")}</span>}
                 >
                   {getFieldDecorator("maSinhVien")(
                     <Input
-                      style={{ fontSize: "15px" }}
+                      style={{ fontSize: "14px" }}
                       size="large"
                       placeholder={t("index.form.enter_student_id")}
                     />,
@@ -123,11 +125,11 @@ const FormTraCuuVBCC = (props) => {
               </Col>
               <Col xs={24} md={8}>
                 <Form.Item
-                  label={<span style={{ fontSize: "15px" }}>{t("index.form.diploma_no")}</span>}
+                  label={<span>{t("index.form.diploma_no")}</span>}
                 >
                   {getFieldDecorator("soHieuVanBang")(
                     <Input
-                      style={{ fontSize: "15px" }}
+                      style={{ fontSize: "14px" }}
                       size="large"
                       placeholder={t("index.form.enter_diploma_no")}
                     />,
@@ -136,11 +138,11 @@ const FormTraCuuVBCC = (props) => {
               </Col>
               <Col xs={24} md={8}>
                 <Form.Item
-                  label={<span style={{ fontSize: "15px" }}>{t("index.form.book_no")}</span>}
+                  label={<span>{t("index.form.book_no")}</span>}
                 >
                   {getFieldDecorator("soVaoSoBang")(
                     <Input
-                      style={{ fontSize: "15px" }}
+                      style={{ fontSize: "14px" }}
                       size="large"
                       placeholder={t("index.form.example_book_no")}
                     />,
@@ -149,7 +151,7 @@ const FormTraCuuVBCC = (props) => {
               </Col>
             </Row>
 
-            <Form.Item style={{ margin: "8px 0 0", textAlign: "center" }}>
+            <Form.Item style={{ marginTop: "32px", marginBottom: "0px", textAlign: "center" }}>
               <div
                 style={{
                   display: "inline-flex",
@@ -165,10 +167,10 @@ const FormTraCuuVBCC = (props) => {
                     flexDirection: "row",
                     justifyContent: "center",
                     alignItems: "center",
-                    padding: "10.852px 14.4694px",
-                    width: "40px",
-                    height: "40px",
-                    background: "#F3F4F7",
+                    padding: "6px",
+                    width: "36px",
+                    height: "36px",
+                    background: "#F4F4F4",
                     borderRadius: "4px",
                     border: "none",
                   }}
@@ -204,14 +206,17 @@ const FormTraCuuVBCC = (props) => {
                     flexDirection: "row",
                     justifyContent: "center",
                     alignItems: "center",
-                    padding: "10.852px 14.4694px",
-                    gap: "7.23px",
-                    width: "200px",
-                    height: "40px",
-                    background: "#BC2826",
-                    borderColor: "#BC2826",
+                    padding: "7px 24px 6px",
+                    gap: "10px",
+                    height: "36px",
+                    background: "#134D8B",
+                    borderColor: "#134D8B",
                     borderRadius: "4px",
-                    fontSize: "15px",
+                    fontSize: "14px",
+                    fontWeight: "600",
+                    lineHeight: "170%",
+                    textTransform: "uppercase",
+                    color: "#FFFFFF",
                   }}
                 >
                   {t("index.form.search_button")}
@@ -221,8 +226,34 @@ const FormTraCuuVBCC = (props) => {
           </Card>
         </Form>
         <style jsx>{`
-          .vbcc-form :global(.ant-form-item) {
+          :global(.vbcc-form .ant-form-item) {
             margin-bottom: 5px;
+          }
+          :global(.vbcc-form .ant-form-item-label > label),
+          :global(.vbcc-form .ant-form-item-label span) {
+            color: #FFFFFF !important;
+            font-family: 'Montserrat', sans-serif !important;
+            font-style: normal;
+            font-weight: 500 !important;
+            font-size: 14px !important;
+            line-height: 170% !important;
+            letter-spacing: 0.015em !important;
+          }
+          :global(.vbcc-form .ant-input),
+          :global(.vbcc-form .ant-calendar-picker-input) {
+            font-family: 'Montserrat', sans-serif !important;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px !important;
+            line-height: 170% !important;
+            letter-spacing: 0.015em !important;
+            height: 36px !important;
+            border-radius: 4px;
+            border: 1px solid #D2D3D5;
+          }
+          :global(.vbcc-form .ant-input::placeholder),
+          :global(.vbcc-form .ant-calendar-picker-input::placeholder) {
+            color: #D2D3D5 !important;
           }
         `}</style>
       </Col>

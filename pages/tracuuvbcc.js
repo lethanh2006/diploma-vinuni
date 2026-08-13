@@ -54,9 +54,7 @@ const TraCuuVanBangChungChi = (props) => {
   const tieuDeKQ = props.tieuDe;
   const heroBackgroundStyle = {
     background: `
-      linear-gradient(98.21deg, rgba(255, 255, 255, 0.6) 3.66%, rgba(255, 210, 210, 0.6) 91.93%),
-      linear-gradient(78.64deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.2) 95.68%),
-      linear-gradient(180deg, rgba(255, 255, 255, 0.42) 30.19%, rgba(255, 255, 255, 0) 100%),
+      linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.075) 100%),
       url(${bgtracuu})
     `,
     backgroundSize: "cover",
@@ -65,6 +63,7 @@ const TraCuuVanBangChungChi = (props) => {
     borderRadius: "0px",
     maxWidth: "none",
     width: "100%",
+    minHeight: "700px",
     boxSizing: "border-box",
   };
 
@@ -74,7 +73,7 @@ const TraCuuVanBangChungChi = (props) => {
         <SectionWrapper id="daotao">
           {isMobile && (
             <Container fullWidth noGutter>
-              <div style={{ ...heroBackgroundStyle, padding: "24px 16px 24px" }}>
+              <div style={{ ...heroBackgroundStyle, padding: "124px 16px 24px" }}>
                 <div style={{ width: "100%", margin: "0 auto" }}>
                   <div style={{ marginBottom: 12 }}>
                     {tieuDeKQ}
@@ -89,9 +88,9 @@ const TraCuuVanBangChungChi = (props) => {
           )}
           {!isMobile && (
             <Container fullWidth noGutter>
-              <div style={{ ...heroBackgroundStyle, padding: "32px 24px 80px 24px" }}>
-                <div style={{ maxWidth: "1200px", width: "100%", margin: "0 auto" }}>
-                  <Col lg={24} style={{ marginBottom: 32 }}>
+              <div style={{ ...heroBackgroundStyle, padding: "205px 24px 93px 24px" }}>
+                <div style={{ maxWidth: "1100px", width: "100%", margin: "0 auto" }}>
+                  <Col lg={24} style={{ marginBottom: 50 }}>
                     {tieuDeKQ}
                   </Col>
                   <div style={{ width: "100%" }}>

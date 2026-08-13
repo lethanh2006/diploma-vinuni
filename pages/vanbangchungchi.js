@@ -49,7 +49,7 @@ const VBChungChi = ({ secTitleWrapper, secText, secHeading }) => {
       Modal.warning({
         title: t("index.messages.warning"),
         content: t("index.messages.search_by_name_or_no"),
-        onOk() {},
+        onOk() { },
       });
       return;
     } else if (
@@ -64,7 +64,7 @@ const VBChungChi = ({ secTitleWrapper, secText, secHeading }) => {
       Modal.error({
         title: t("index.messages.warning"),
         content: t("index.messages.enter_name_and_dob"),
-        onOk() {},
+        onOk() { },
       });
       return;
     }
@@ -78,7 +78,7 @@ const VBChungChi = ({ secTitleWrapper, secText, secHeading }) => {
       Modal.error({
         title: t("index.messages.warning"),
         content: t("index.messages.no_diploma_found"),
-        onOk() {},
+        onOk() { },
       });
       setloading(false);
       setds([]);

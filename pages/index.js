@@ -27,21 +27,21 @@ const VBChungChi = ({
               flexDirection: "column",
               alignItems: "center",
               padding: 0,
-              gap: "12px",
+              gap: "8px",
               width: "100%",
-              maxWidth: "1200px",
-              minHeight: "96px",
-              margin: "0 auto 16px auto",
+              maxWidth: "100%",
+              minHeight: "84px",
+              margin: "0 auto",
               textAlign: "center",
             }}
           >
             <div
               style={{
+                fontFamily: "'Montserrat', sans-serif",
                 fontWeight: 600,
-                fontSize: "clamp(22px, 6.4vw, 42px)",
+                fontSize: "clamp(24px, 6vw, 36px)",
                 lineHeight: "135%",
-                letterSpacing: "0.03em",
-                color: "#BC2626",
+                color: "#FFFFFF",
               }}
             >
               {t("index.question")}
@@ -49,11 +49,11 @@ const VBChungChi = ({
 
             <div
               style={{
-                fontWeight: 600,
-                fontSize: "clamp(12px, 3.8vw, 20px)",
+                fontFamily: "'Montserrat', sans-serif",
+                fontWeight: 500,
+                fontSize: "clamp(14px, 4vw, 20px)",
                 lineHeight: "135%",
-                letterSpacing: "0.03em",
-                color: "#051A53",
+                color: "#FFFFFF",
               }}
             >
               {t("index.prompt")}

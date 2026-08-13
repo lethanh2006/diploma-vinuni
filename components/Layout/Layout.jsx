@@ -69,9 +69,7 @@ export default function Layout({ children, home }) {
           <GlobalStyle />
 
           <ContentWrapper>
-            <Sticky top={0} innerZ={9999} activeClass="sticky-nav-active">
-              <Navbar />
-            </Sticky>
+            <Navbar />
 
             {children}
             <Footer />
@@ -81,7 +79,8 @@ export default function Layout({ children, home }) {
                 style={{
                   float: "right",
                   margin: 20,
-                  backgroundColor: "#D10000",
+                  backgroundColor: "#134D8B",
+                  borderColor: "#134D8B",
                   borderRadius: "40%",
                 }}
                 onClick={scrollToTop}

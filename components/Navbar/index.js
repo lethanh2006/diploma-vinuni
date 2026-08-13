@@ -1,10 +1,6 @@
-/* eslint-disable semi */
-/* eslint-disable react/jsx-indent */
-/* eslint-disable indent */
 import { useRouter } from "next/router";
 import { Button, Col, Drawer, Icon, Menu, Row, Dropdown } from "antd";
-// import { MENU_ITEMS_MOBILE } from 'common/src/data/Hosting/data';
-import LogoImage from "assets/image/hosting/ptit-logo.png";
+import LogoImage from "assets/image/logo.png";
 import axios from "axios";
 import Box from "components/Box";
 import ScrollSpyMenu from "components/ScrollSpyMenu";
@@ -21,6 +17,189 @@ import { Image } from "./Navbar/navbar.style";
 import { useTranslation } from "components/Utils/useTranslation";
 
 const { Item, SubMenu } = Menu;
+
+const NavbarOuter = styled.header`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: ${props => props.scrolled ? "rgba(0, 0, 0, 0.501961)" : "transparent"};
+  box-shadow: ${props => props.scrolled ? "0px 4px 10px rgba(0, 0, 0, 0.15)" : "none"};
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(2.5px);
+  -webkit-backdrop-filter: blur(2.5px);
+  font-family: 'Montserrat', sans-serif;
+`;
+
+const InnerWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px 100px 12px;
+  gap: 2px;
+  width: 100%;
+  max-width: 1438px;
+  height: 104px;
+  box-sizing: border-box;
+
+  @media (max-width: 768px) {
+    padding: 16px 20px 12px;
+    gap: 12px;
+    height: auto;
+  }
+`;
+
+const TopRow = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1240px;
+  height: 24px;
+
+  @media (max-width: 768px) {
+    height: auto;
+  }
+`;
+
+const PortalLinks = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+
+  @media (max-width: 480px) {
+    gap: 8px;
+  }
+`;
+
+const PortalLink = styled.a`
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 135%;
+  color: #ffffff;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.8;
+    color: #ffffff;
+    text-decoration: none;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 12px;
+  }
+`;
+
+const Divider = styled.span`
+  display: inline-block;
+  width: 0;
+  height: 13px;
+  border-left: 1px solid #ffffff;
+  opacity: 1;
+`;
+
+const LangSwitcher = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 4px;
+  overflow: hidden;
+  height: 24px;
+  flex-shrink: 0;
+`;
+
+const LangBtn = styled.button`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 8px;
+  width: 32px;
+  height: 24px;
+  border: none;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  transition: background 0.2s, color 0.2s;
+
+  &.active {
+    background: #c72127;
+    color: #ffffff;
+  }
+
+  &.inactive {
+    background: transparent;
+    color: #134d8b;
+  }
+`;
+
+const BottomRow = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1240px;
+  height: 50px;
+
+  @media (max-width: 768px) {
+    height: 44px;
+  }
+`;
+
+const LogoArea = styled.a`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.9;
+    text-decoration: none;
+  }
+`;
+
+const LogoImg = styled.img`
+  width: 244px;
+  height: 50px;
+  object-fit: contain;
+
+  @media (max-width: 768px) {
+    width: 210px;
+    height: 44px;
+  }
+`;
+
+
+
+export function Format(str) {
+  if (!str) return "";
+  return str
+    .toString()
+    .trim()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/đ/g, "d")
+    .replace(/\s/g, "");
+}
+
 export const AWrapper = styled.a`
   color: #000000 !important;
   height: 80px !important;
@@ -39,32 +218,18 @@ export const ItemAntd = styled(Item)`
     color: rgb(52, 61, 72);
   }
   &:hover a::before {
-    color: #ff3d3b !important; /* border-bottom: 1.5px solid #FF3D3B; */
+    color: #ff3d3b !important;
     content: "";
   }
 `;
-export function Format(str) {
-  // xóa hết dấu + đưa về chữ thường
-  if (!str) return "";
-  return str
-    .toString()
-    .trim()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .toLowerCase()
-    .replace(/đ/g, "d")
-    .replace(/\s/g, "");
-}
+
+
 
 const Navbar = ({ navbarStyle, logoStyle, button, row, menuWrapper }) => {
   const router = useRouter();
   const { t, locale, changeLocale } = useTranslation();
-  const isDesktop = useMediaQuery({
-    query: "(max-width: 768px)",
-  });
-  const isMobile = useMediaQuery({
-    query: "(max-width: 500px)",
-  });
+  const isDesktop = useMediaQuery({ query: "(max-width: 768px)" });
+  const isMobile = useMediaQuery({ query: "(max-width: 500px)" });
 
   const languageMenu = (
     <Menu onClick={({ key }) => changeLocale(key)} style={{ padding: "8px 0" }}>
@@ -83,17 +248,27 @@ const Navbar = ({ navbarStyle, logoStyle, button, row, menuWrapper }) => {
   const [loaitintuc, setLoaiTinTuc] = useState([]);
   const [loading, setLoading] = useState(true);
   const [showDrawer, setShowDrawer] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (typeof window !== "undefined") {
+        if (window.scrollY > 0) {
+          setScrolled(true);
+        } else {
+          setScrolled(false);
+        }
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   useEffect(() => {
     (async function wrapFunc() {
       setLoading(false);
       const response = await axios.get(`${ip}/he-dao-tao`, {
-        params: {
-          page: 1,
-          limit: 1000,
-          // cond: {
-          //   maLoaiBaiViet: 'THONG-DIEP'
-          // }
-        },
+        params: { page: 1, limit: 1000 },
       });
       const ctrDaoTao = _.get(response, "data.data", []);
       setDaotao(ctrDaoTao);
@@ -134,9 +309,7 @@ const Navbar = ({ navbarStyle, logoStyle, button, row, menuWrapper }) => {
             }
           }}
         >
-          {/* <Link href={`/tintucchung#${Format(item?.maLoai)}`}> */}
           <a style={{ fontSize: isDesktop ? 14 : 18 }}>{item?.tenLoai}</a>
-          {/* </Link> */}
         </Item>,
       );
     });
@@ -170,11 +343,7 @@ const Navbar = ({ navbarStyle, logoStyle, button, row, menuWrapper }) => {
   };
 
   let MENU_ITEMS = [
-    {
-      label: t("menu.home"),
-      path: "#",
-      offset: "70",
-    },
+    { label: t("menu.home"), path: "#", offset: "70" },
     {
       hover: true,
       label: t("menu.general_intro"),
@@ -188,9 +357,7 @@ const Navbar = ({ navbarStyle, logoStyle, button, row, menuWrapper }) => {
         </Item>,
         <Item>
           <Link href="/chucnangnhiemvu">
-            <a style={{ fontSize: isDesktop ? 14 : 18 }}>
-              {t("menu.functions")}
-            </a>
+            <a style={{ fontSize: isDesktop ? 14 : 18 }}>{t("menu.functions")}</a>
           </Link>
         </Item>,
         <Item>
@@ -200,14 +367,8 @@ const Navbar = ({ navbarStyle, logoStyle, button, row, menuWrapper }) => {
         </Item>,
       ],
     },
-    {
-      label: t("menu.news"),
-      path: "tintucchung",
-    },
-    {
-      label: t("menu.admission_plan"),
-      path: "deantuyensinh",
-    },
+    { label: t("menu.news"), path: "tintucchung" },
+    { label: t("menu.admission_plan"), path: "deantuyensinh" },
     {
       label: t("menu.admission"),
       path: "https://tuyensinh.ptit.edu.vn/",
@@ -215,15 +376,12 @@ const Navbar = ({ navbarStyle, logoStyle, button, row, menuWrapper }) => {
       redirect: true,
       submenu: [
         <Item>
-          {/* <Link href="/vanbangchungchi"> */}
           <a
             style={{ fontSize: isDesktop ? 14 : 18 }}
             onClick={() => window.open("https://tuyensinh.ptit.edu.vn/")}
           >
             {t("menu.admission_news")}
           </a>
-
-          {/* </Link> */}
         </Item>,
         <Item>
           <Link href="/chungchi">
@@ -250,317 +408,82 @@ const Navbar = ({ navbarStyle, logoStyle, button, row, menuWrapper }) => {
       offset: "70",
       submenu: [
         <Item>
-          {/* <Link href="/vanbangchungchi"> */}
           <a
             style={{ fontSize: isDesktop ? 14 : 18 }}
             onClick={() => window.open("https://tracuuvanbang.ptit.edu.vn/")}
           >
             {t("menu.lookup_diploma")}
           </a>
-
-          {/* </Link> */}
         </Item>,
         <Item>
           <Link href="/chungchi">
-            <a style={{ fontSize: isDesktop ? 14 : 18 }}>
-              {t("menu.lookup_english")}
-            </a>
+            <a style={{ fontSize: isDesktop ? 14 : 18 }}>{t("menu.lookup_english")}</a>
           </Link>
         </Item>,
       ],
     },
-    {
-      label: t("menu.three_publics"),
-      path: "bacongkhai",
-      offset: "70",
-    },
+    { label: t("menu.three_publics"), path: "bacongkhai", offset: "70" },
   ];
 
-  const handleClick = () => {};
+  const handleClick = () => { };
+  const closeDrawer = () => setShowDrawer(false);
+  const openDrawer = () => setShowDrawer(true);
 
-  const closeDrawer = () => {
-    setShowDrawer(false);
-  };
+  const isEN = locale === "en-US";
 
-  const openDrawer = () => {
-    setShowDrawer(true);
-  };
-
-  return isMobile ? (
-    <header>
-      <div
-        style={{
-          backgroundColor: "#b9191c",
-          color: "white",
-          padding: "8px 0",
-          fontSize: "12px",
-        }}
+  const LangSwitch = () => (
+    <LangSwitcher>
+      <LangBtn
+        className={isEN ? "active" : "inactive"}
+        onClick={() => changeLocale("en-US")}
+        style={{ borderRadius: "4px 0 0 4px" }}
       >
-        <Container>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-            }}
-          >
-            <div style={{ display: "flex", alignItems: "center", gap: "4px" }}>
-              <a
-                href="https://ptit.edu.vn"
-                target="_blank"
-                rel="noreferrer"
-                style={{
-                  color: "white",
-                  textDecoration: "underline",
-                  whiteSpace: "nowrap",
-                }}
-              >
-                {t("footer.ptit_portal")}
-              </a>
-            </div>
-
-            <div style={{ display: "flex", alignItems: "center" }}>
-              <Dropdown overlay={languageMenu} trigger={["hover", "click"]} placement="bottomCenter">
-                <a className="ant-dropdown-link" style={{ display: "flex", alignItems: "center", cursor: "pointer" }}>
-                  <img
-                    src={`/assets/image/locales/${locale === "vi-VN" ? "vi-VN.svg" : "en-US.svg"}`}
-                    alt="lang"
-                    width={28}
-                    height={18}
-                    style={{ borderRadius: "2px", objectFit: "cover", boxShadow: "0 1px 3px rgba(0,0,0,0.15)" }}
-                  />
-                </a>
-              </Dropdown>
-            </div>
-          </div>
-        </Container>
-      </div>
-
-      <div
-        id="nav-bar-mobile"
-        style={{
-          backgroundColor: "white",
-          boxShadow: "rgba(43, 83, 135, 0.08) 0px 3px 8px 0px",
-          padding: "12px 0",
-        }}
+        EN
+      </LangBtn>
+      <LangBtn
+        className={!isEN ? "active" : "inactive"}
+        onClick={() => changeLocale("vi-VN")}
+        style={{ borderRadius: "0 4px 4px 0" }}
       >
-        <Container>
-          <Row style={{ width: "100%", alignItems: "center" }}>
-            <Col xl={2} lg={2} md={2} xs={0} sm={0}>
-              <Link rel="prefetch" href={`/`}>
-                <a>
-                  <Image
-                    style={{
-                      width: "100%",
-                      minWidth: "50px",
-                      marginLeft: "-10px",
-                      display: "none",
-                    }}
-                    src={LogoImage}
-                    alt="logo"
-                  />
-                </a>
-              </Link>
-            </Col>
-
-            <Col
-              xl={19}
-              lg={19}
-              md={19}
-              xs={0}
-              sm={0}
-              style={{ paddingTop: 25 }}
-            >
-              {!loading && (
-                <ScrollSpyMenu
-                  menuItems={MENU_ITEMS}
-                  offset={-60}
-                  isDesktop={isDesktop}
-                  onClose={closeDrawer}
-                />
-              )}
-            </Col>
-
-            <Col xl={0} lg={0} md={0} xs={24} sm={24}>
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "center",
-                  paddingLeft: "0px",
-                  paddingRight: "8px",
-                }}
-              >
-                <div
-                  style={{
-                    color: "#b9191c",
-                    fontSize: "clamp(11px, 2.6vw, 14px)",
-                    fontWeight: "600",
-                    textAlign: "center",
-                    marginBottom: "4px",
-                    lineHeight: 1.25,
-                  }}
-                >
-                  {t("footer.academy_name")}
-                </div>
-
-                <div
-                  style={{
-                    color: "#002060",
-                    fontSize: "clamp(13px, 3vw, 16px)",
-                    fontWeight: "750",
-                    textAlign: "center",
-                    textTransform: "uppercase",
-                    lineHeight: 1.25,
-                  }}
-                >
-                  {t("footer.system_title")}
-                </div>
-              </div>
-            </Col>
-          </Row>
-        </Container>
-      </div>
-    </header>
-  ) : (
-    <header>
-      <div
-        style={{
-          backgroundColor: "#b9191c",
-          color: "white",
-          padding: "12px 40px",
-          fontSize: "14px",
-        }}
-      >
-        <Container>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-            }}
-          >
-            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                <polyline points="9 22 9 12 15 12 15 22"></polyline>
-              </svg>
-
-              <a
-                href="https://daotao.ptit.edu.vn"
-                target="_blank"
-                rel="noreferrer"
-                style={{
-                  color: "white",
-                  textDecoration: "underline",
-                  fontSize: "clamp(10px, 2vw, 14px)",
-                }}
-              >
-                {t("footer.ptit_portal_full")}
-              </a>
-            </div>
-
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "4px",
-                cursor: "pointer",
-                fontSize: "clamp(10px, 2vw, 14px)",
-              }}
-            >
-              <Dropdown overlay={languageMenu} trigger={["hover", "click"]} placement="bottomCenter">
-                <a className="ant-dropdown-link" style={{ display: "flex", alignItems: "center", cursor: "pointer" }}>
-                  <img
-                    src={`/assets/image/locales/${locale === "vi-VN" ? "vi-VN.svg" : "en-US.svg"}`}
-                    alt="lang"
-                    width={28}
-                    height={18}
-                    style={{ borderRadius: "2px", objectFit: "cover", boxShadow: "0 1px 3px rgba(0,0,0,0.15)" }}
-                  />
-                </a>
-              </Dropdown>
-            </div>
-          </div>
-        </Container>
-      </div>
-
-      <div
-        id="nav-bar-desktop"
-        style={{
-          backgroundColor: "white",
-          boxShadow: "rgba(43, 83, 135, 0.08) 0px 3px 8px 0px",
-          padding: "15px 0",
-        }}
-      >
-        <Container>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              gap: "20px",
-            }}
-          >
-            {!isDesktop && (
-              <Link rel="prefetch" href={`/`}>
-                <a style={{ display: "flex", alignItems: "center" }}>
-                  <Image
-                    style={{
-                      width: "44.33px",
-                      height: "54px",
-                      objectFit: "contain",
-                    }}
-                    src={LogoImage}
-                    alt="logo"
-                  />
-                </a>
-              </Link>
-            )}
-
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                textAlign: "center",
-              }}
-            >
-              <div
-                style={{
-                  color: "#b9191c",
-                  fontSize: "clamp(12px, 2vw, 15px)",
-                  fontWeight: "600",
-                  marginBottom: "4px",
-                }}
-              >
-                {t("footer.academy_name")}
-              </div>
-
-              <div
-                style={{
-                  color: "#002060",
-                  fontSize: "clamp(16px, 2vw, 18px)",
-                  fontWeight: "750",
-                  textTransform: "uppercase",
-                }}
-              >
-                {t("footer.system_title")}
-              </div>
-            </div>
-          </div>
-        </Container>
-      </div>
-    </header>
+        VI
+      </LangBtn>
+    </LangSwitcher>
   );
+
+  const NavShell = () => (
+    <NavbarOuter scrolled={scrolled}>
+      <InnerWrap>
+        <TopRow>
+          <PortalLinks>
+            <PortalLink href="https://vinuni.edu.vn" target="_blank" rel="noreferrer">
+              Về VinUni
+            </PortalLink>
+            <Divider />
+            <PortalLink href="https://vinuni.edu.vn/academics" target="_blank" rel="noreferrer">
+              Academic
+            </PortalLink>
+            <Divider />
+            <PortalLink href="https://vinuni.edu.vn/admissions" target="_blank" rel="noreferrer">
+              Admission
+            </PortalLink>
+          </PortalLinks>
+
+          <LangSwitch />
+        </TopRow>
+
+        <BottomRow>
+          <LogoArea href="/">
+            <LogoImg
+              src="/assets/image/textngang.png"
+              alt="VinUni Logo"
+            />
+          </LogoArea>
+        </BottomRow>
+      </InnerWrap>
+    </NavbarOuter>
+  );
+
+  return <NavShell />;
 };
 
 export default Navbar;
