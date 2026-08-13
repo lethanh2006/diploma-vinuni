@@ -187,10 +187,16 @@ const KetQuaVanBang = ({ thongTinTraCuu = [], onViewDetail }) => {
                 }}
               />
             </div>
-            <span style={{
+            <span className="vbcc-empty-message" style={{
               flex: "none",
               order: 1,
               flexGrow: 0,
+              display: "block",
+              width: "100%",
+              maxWidth: isMobile ? "440px" : "none",
+              boxSizing: "border-box",
+              textAlign: "center",
+              textWrap: "balance",
               fontStyle: "normal",
               fontWeight: 500,
               fontSize: "clamp(12px, 3.8vw, 20px)",
