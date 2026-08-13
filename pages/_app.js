@@ -11,19 +11,18 @@ export default ({ Component, pageProps }) => (
     <Layout>
       <Modal />
       <DefaultSeo
-        title="HỌC VIỆN CÔNG NGHỆ BƯU CHÍNH VIỄN THÔNG CỔNG THÔNG TIN ĐÀO TẠO"
-        description="Trang Web cung cấp thông tin về Học viện Công nghệ Bưu chính Viễn Thông"
+        title="VinUni Cổng tra cứu văn bằng"
+        description="Cổng tra cứu và xác thực thông tin văn bằng VinUni"
         openGraph={{
           type: 'website',
           locale: 'vi_VN',
-          url: 'https://tuyensinhptit.aisenote.com/',
-          site_name: 'HỌC VIỆN CÔNG NGHỆ BƯU CHÍNH VIỄN THÔNG CỔNG THÔNG TIN ĐÀO TẠO',
+          site_name: 'VinUni Cổng tra cứu văn bằng',
           images: [
             {
-              url: 'https://portal.ptit.edu.vn/wp-content/uploads/2019/01/1-10.jpg',
-              width: 800,
-              height: 600,
-              alt: 'Banner',
+              url: '/assets/image/metadata.png',
+              width: 2401,
+              height: 2400,
+              alt: 'VinUniversity',
               },
             ],
           }}

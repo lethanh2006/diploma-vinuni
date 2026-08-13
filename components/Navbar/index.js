@@ -1,6 +1,5 @@
 import { useRouter } from "next/router";
 import { Button, Col, Drawer, Icon, Menu, Row, Dropdown } from "antd";
-import LogoImage from "assets/image/logo.png";
 import axios from "axios";
 import Box from "components/Box";
 import ScrollSpyMenu from "components/ScrollSpyMenu";

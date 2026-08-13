@@ -5,7 +5,7 @@ import { useMediaQuery } from "react-responsive";
 import { useTranslation } from "components/Utils/useTranslation";
 import Link from "next/link";
 
-const KetQuaVanBang = ({ thongTinTraCuu = [] }) => {
+const KetQuaVanBang = ({ thongTinTraCuu = [], onViewDetail }) => {
   const { t } = useTranslation();
   const isMobile = useMediaQuery({ maxWidth: 767 });
 
@@ -51,7 +51,7 @@ const KetQuaVanBang = ({ thongTinTraCuu = [] }) => {
         <Tooltip
           title={!rec?.DuLieu?._id ? t("index.table.no_info") : t("index.table.detail")}
         >
-          <Link href={rec?.DuLieu?._id ? `/vanbangchungchi/${rec.DuLieu._id}` : "#"} passHref>
+          {onViewDetail ? (
             <a
               style={{
                 display: "inline-flex",
@@ -67,7 +67,8 @@ const KetQuaVanBang = ({ thongTinTraCuu = [] }) => {
                 transition: "background 0.2s ease"
               }}
               onClick={(e) => {
-                if (!rec?.DuLieu?._id) e.preventDefault();
+                e.preventDefault();
+                if (rec?.DuLieu?._id) onViewDetail(rec.DuLieu._id);
               }}
             >
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -75,7 +76,33 @@ const KetQuaVanBang = ({ thongTinTraCuu = [] }) => {
                 <path d="M13.6003 10.1334C13.6003 7.11426 11.1528 4.66675 8.13366 4.66675C5.1145 4.66675 2.66699 7.11426 2.66699 10.1334" stroke="#2E2E2E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </a>
-          </Link>
+          ) : (
+            <Link href={rec?.DuLieu?._id ? `/vanbangchungchi/${rec.DuLieu._id}` : "#"} passHref>
+              <a
+                style={{
+                  display: "inline-flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  cursor: rec?.DuLieu?._id ? "pointer" : "not-allowed",
+                  opacity: rec?.DuLieu?._id ? 1 : 0.5,
+                  width: "28px",
+                  height: "28px",
+                  background: "#F4F4F4",
+                  borderRadius: "4px",
+                  border: "none",
+                  transition: "background 0.2s ease"
+                }}
+                onClick={(e) => {
+                  if (!rec?.DuLieu?._id) e.preventDefault();
+                }}
+              >
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="8.13379" cy="9.19995" r="2" stroke="#2E2E2E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M13.6003 10.1334C13.6003 7.11426 11.1528 4.66675 8.13366 4.66675C5.1145 4.66675 2.66699 7.11426 2.66699 10.1334" stroke="#2E2E2E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </a>
+            </Link>
+          )}
         </Tooltip>
       ),
     },

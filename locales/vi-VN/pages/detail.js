@@ -16,9 +16,21 @@ module.exports = {
   issue_date: "Ngày ban hành",
   summary: "Nội dung trích yếu",
   appendix_info: "Thông tin phụ lục",
+  appendix_major: "Chuyên ngành đào tạo",
+  language_of_instruction: "Ngôn ngữ đào tạo",
+  ethnicity: "Dân tộc",
+  graduation_decision_no: "Số QĐTN",
+  graduation_decision_date: "Ngày QĐTN",
+  value_information_systems: "Hệ thống thông tin",
+  value_vietnamese: "Tiếng Việt",
+  value_kinh: "Kinh",
+  value_bachelor: "Cử nhân",
+  value_doctorate: "Tiến sĩ",
+  value_full_time: "Chính quy",
   diploma_file: "Tệp tin văn bằng",
   ipfs_file: "Tệp tin IPFS",
   signed_info: "Thông tin văn bằng đã được ký số:",
   check_signature: "Kiểm tra chữ ký số (JWS)",
-  no_appendix_error: "Không tìm thấy thông tin phụ lục"
+  no_appendix_error: "Không tìm thấy thông tin phụ lục",
+  back: "Quay lại"
 };

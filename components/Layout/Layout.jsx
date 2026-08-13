@@ -4,7 +4,6 @@
 // import Footer from 'common/src/components/Footer/index';
 import { Affix, Button, Icon } from "antd";
 import { ResetCSS } from "assets/css/style";
-import logo from "assets/image/hosting/logo.png";
 import Navbar from "components/Navbar";
 // import Navbar from '../../../common/src/containers/Hosting/Navbar'
 import Footer from "components/Footer/index";
@@ -16,8 +15,8 @@ import { ThemeProvider } from "styled-components";
 import { hostingTheme } from "./hosting";
 import { ContentWrapper, GlobalStyle } from "./hosting.style";
 
-const name = "TomCatJS";
-export const siteTitle = "Tuyển sinh PTIT";
+export const siteTitle = "VinUni Cổng tra cứu văn bằng";
+const siteDescription = "Cổng tra cứu và xác thực thông tin văn bằng VinUni";
 
 
 export default function Layout({ children, home }) {
@@ -33,31 +32,22 @@ export default function Layout({ children, home }) {
   return (
     <div>
       <Head>
-        <link rel="prefetch" href="/favicon.ico" />
-        <link rel="prefetch" href="/assets/image/hosting/logo.png" />
-        <link rel="prerender" href="https://daotao.aisenote.com/" />
-        <link rel="prerender" href="https://tuyensinh.ptit.edu.vn/" />
-        <link />
-        <title>
-          HỌC VIỆN CÔNG NGHỆ BƯU CHÍNH VIỄN THÔNG, CỔNG THÔNG TIN PHÒNG ĐÀO TẠO
-        </title>
-        <meta
-          name="Description"
-          content="HỌC VIỆN CÔNG NGHỆ BƯU CHÍNH VIỄN THÔNG, CỔNG THÔNG TIN PHÒNG ĐÀO TẠO"
-        />
-        <meta name="theme-color" content="#eb4d4b" />
+        <link rel="icon" type="image/png" href="/assets/image/logo_vinuni.png" />
+        <link rel="shortcut icon" type="image/png" href="/assets/image/logo_vinuni.png" />
+        <link rel="apple-touch-icon" href="/assets/image/logo.png" />
+        <link rel="prefetch" href="/assets/image/metadata.png" />
+        <title>{siteTitle}</title>
+        <meta name="description" content={siteDescription} />
+        <meta name="theme-color" content="#134D8B" />
         <link
           href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,500i,700,900|Open+Sans:400,400i,600,700"
           // rel="Prefetch"
           rel="preload"
           as="font"
         />
-        <meta
-          name="description"
-          content="HỌC VIỆN CÔNG NGHỆ BƯU CHÍNH VIỄN THÔNG CỔNG THÔNG TIN ĐÀO TẠO"
-        />
-        <meta property="og:image" content={logo} />
-        <meta name="og:title" content={siteTitle} />
+        <meta property="og:title" content={siteTitle} />
+        <meta property="og:description" content={siteDescription} />
+        <meta property="og:image" content="/assets/image/metadata.png" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>

@@ -11,6 +11,7 @@ import { useMediaQuery } from "react-responsive";
 import SectionWrapper from "../styles/vanbangchungchi.style";
 import bgtracuu from "assets/image/bgtracuu.png";
 import { useTranslation } from "components/Utils/useTranslation";
+import ChiTietVanBang from "./vanbangchungchi/[idChiTiet]";
 
 const TraCuuVanBangChungChi = (props) => {
   const { t } = useTranslation();
@@ -18,6 +19,8 @@ const TraCuuVanBangChungChi = (props) => {
 
   const [ds, setds] = useState([]);
   const [loading, setloading] = useState(false);
+  const [selectedId, setSelectedId] = useState(null);
+
   const traCuu = async (values) => {
     const filledFields = Object.entries(values).filter(
       ([key, value]) => key !== "mucDichTraCuuId" && !!value
@@ -32,6 +35,7 @@ const TraCuuVanBangChungChi = (props) => {
     }
 
     setloading(true);
+    setSelectedId(null);
     const data = await axios.post(
       `${ipPTIT}vbcc/phu-luc-van-bang/public/tra-cuu-phu-luc-van-bang`,
       values
@@ -68,7 +72,7 @@ const TraCuuVanBangChungChi = (props) => {
   };
 
   return (
-    <Row>
+    <Row style={{ width: "100%" }}>
       <Spin spinning={!!loading}>
         <SectionWrapper id="daotao">
           {isMobile && (
@@ -79,11 +83,27 @@ const TraCuuVanBangChungChi = (props) => {
                     {tieuDeKQ}
                   </div>
                   <div style={{ width: "100%" }}>
-                    <FormTraCuu onSubmit={(values) => traCuu(values)} onReset={() => setds([])} />
+                    <FormTraCuu
+                      onSubmit={(values) => traCuu(values)}
+                      onReset={() => {
+                        setds([]);
+                        setSelectedId(null);
+                      }}
+                    />
                   </div>
                 </div>
               </div>
-              <TableTraCuuVBCC thongTinTraCuu={ds} />
+              {selectedId ? (
+                <ChiTietVanBang
+                  id={selectedId}
+                  onBack={() => setSelectedId(null)}
+                />
+              ) : (
+                <TableTraCuuVBCC
+                  thongTinTraCuu={ds}
+                  onViewDetail={(id) => setSelectedId(id)}
+                />
+              )}
             </Container>
           )}
           {!isMobile && (
@@ -94,11 +114,27 @@ const TraCuuVanBangChungChi = (props) => {
                     {tieuDeKQ}
                   </Col>
                   <div style={{ width: "100%" }}>
-                    <FormTraCuu onSubmit={(values) => traCuu(values)} onReset={() => setds([])} />
+                    <FormTraCuu
+                      onSubmit={(values) => traCuu(values)}
+                      onReset={() => {
+                        setds([]);
+                        setSelectedId(null);
+                      }}
+                    />
                   </div>
                 </div>
               </div>
-              <TableTraCuuVBCC thongTinTraCuu={ds} />
+              {selectedId ? (
+                <ChiTietVanBang
+                  id={selectedId}
+                  onBack={() => setSelectedId(null)}
+                />
+              ) : (
+                <TableTraCuuVBCC
+                  thongTinTraCuu={ds}
+                  onViewDetail={(id) => setSelectedId(id)}
+                />
+              )}
             </Container>
           )}
         </SectionWrapper>

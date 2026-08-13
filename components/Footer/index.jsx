@@ -442,6 +442,84 @@ const GlobalFooter = () => {
             margin-left: 0;
           }
         }
+
+        @media (max-width: 767px) {
+          .footer-container {
+            padding: 28px 16px 32px;
+            gap: 24px;
+          }
+
+          .footer-trapezoid {
+            max-width: 392px;
+            height: 120px;
+            border-radius: 12px;
+          }
+
+          .logo-container {
+            width: 146px;
+            height: 108px;
+          }
+
+          .footer-content-wrapper {
+            gap: 24px;
+          }
+
+          .footer-column {
+            max-width: 392px;
+            gap: 12px;
+          }
+
+          .footer-column-title {
+            font-size: 17px;
+            line-height: 135%;
+          }
+
+          .footer-links-list {
+            gap: 8px;
+          }
+
+          .footer-link-item,
+          .footer-link-item.align-start {
+            width: fit-content;
+            max-width: 100%;
+            min-height: 20px;
+            align-items: flex-start;
+            justify-content: flex-start;
+            gap: 8px;
+          }
+
+          .bullet-dot,
+          .bullet-dot.mt-8 {
+            align-self: flex-start !important;
+            margin-top: 8px !important;
+          }
+
+          .footer-link,
+          .footer-text-content {
+            width: auto;
+            max-width: calc(100% - 12px);
+            height: auto;
+            min-height: 20px;
+            align-items: flex-start;
+            justify-content: flex-start;
+            font-size: 14px;
+            line-height: 145%;
+            text-align: left;
+          }
+
+          .social-icons-row {
+            width: auto;
+            height: 32px;
+            padding: 4px 8px;
+            gap: 14px;
+          }
+
+          .social-icon-link,
+          .social-icon-link svg {
+            width: 22px;
+            height: 22px;
+          }
+        }
       `}</style>
     </footer>
   );

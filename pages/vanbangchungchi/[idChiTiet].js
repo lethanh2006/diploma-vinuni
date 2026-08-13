@@ -14,7 +14,50 @@ const PDFViewerV2 = dynamic(
   { ssr: false },
 );
 
-const renderField = (item) => {
+const normalizeLocalizedText = (value) =>
+  typeof value === "string" ? value.trim().toLocaleLowerCase("vi") : "";
+
+const dynamicHeaderKeys = {
+  "chuyên ngành": "detail.appendix_major",
+  "chuyên ngành đào tạo": "detail.appendix_major",
+  major: "detail.appendix_major",
+  "ngôn ngữ đào tạo": "detail.language_of_instruction",
+  "language of instruction": "detail.language_of_instruction",
+  "dân tộc": "detail.ethnicity",
+  ethnicity: "detail.ethnicity",
+  "số qđtn": "detail.graduation_decision_no",
+  "số quyết định tốt nghiệp": "detail.graduation_decision_no",
+  "graduation decision number": "detail.graduation_decision_no",
+  "ngày qđtn": "detail.graduation_decision_date",
+  "ngày quyết định tốt nghiệp": "detail.graduation_decision_date",
+  "graduation decision date": "detail.graduation_decision_date",
+};
+
+const dynamicValueKeys = {
+  "hệ thống thông tin": "detail.value_information_systems",
+  "information systems": "detail.value_information_systems",
+  "tiếng việt": "detail.value_vietnamese",
+  vietnamese: "detail.value_vietnamese",
+  kinh: "detail.value_kinh",
+  "cử nhân": "detail.value_bachelor",
+  "bachelor's degree": "detail.value_bachelor",
+  "tiến sĩ": "detail.value_doctorate",
+  "doctoral degree": "detail.value_doctorate",
+  "chính quy": "detail.value_full_time",
+  "full-time": "detail.value_full_time",
+};
+
+const translateDynamicHeader = (value, t) => {
+  const translationKey = dynamicHeaderKeys[normalizeLocalizedText(value)];
+  return translationKey ? t(translationKey) : value;
+};
+
+const translateDynamicValue = (value, t) => {
+  const translationKey = dynamicValueKeys[normalizeLocalizedText(value)];
+  return translationKey ? t(translationKey) : value;
+};
+
+const renderField = (item, t) => {
   if (item.type === "Date") {
     return item.value ? moment(item.value).format("DD/MM/YYYY") : "---";
   }
@@ -24,22 +67,23 @@ const renderField = (item) => {
   if (typeof item.value === "object") {
     return JSON.stringify(item.value);
   }
-  return item.value || "---";
+  return translateDynamicValue(item.value, t) || "---";
 };
 
-const ChiTietVanBang = () => {
+const ChiTietVanBang = ({ id, onBack }) => {
   const { t } = useTranslation();
   const router = useRouter();
-  const { idChiTiet } = router.query;
+  const routerId = router.query?.idChiTiet;
+  const activeId = id || routerId;
   const [record, setRecord] = useState({});
   const [loading, setLoading] = useState(false);
 
-  const fetchChiTiet = async (id) => {
-    if (!id) return;
+  const fetchChiTiet = async (targetId) => {
+    if (!targetId) return;
     setLoading(true);
     try {
       const res = await axios.get(
-        `${ipPTIT}vbcc/phu-luc-van-bang/public/chi-tiet-phu-luc/${id}`,
+        `${ipPTIT}vbcc/phu-luc-van-bang/public/chi-tiet-phu-luc/${targetId}`,
       );
       setRecord(res?.data?.data || {});
     } catch (error) {
@@ -51,76 +95,97 @@ const ChiTietVanBang = () => {
   };
 
   useEffect(() => {
-    if (idChiTiet) fetchChiTiet(idChiTiet);
-  }, [idChiTiet]);
+    if (activeId) fetchChiTiet(activeId);
+  }, [activeId]);
 
   return (
     <Spin spinning={loading}>
       <div className="vbcc-container">
-        <div
-          style={{
-            maxWidth: 1200,
-            margin: "auto",
-            paddingTop: 30,
-            paddingBottom: 30,
-          }}
-        >
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              marginBottom: 36,
-              flexWrap: "wrap",
-              gap: 16,
-            }}
-          >
-            <div
-              style={{
-                fontSize: 28,
-                fontWeight: "bold",
-                color: "#1a253f",
-                display: "flex",
-                alignItems: "center",
-                gap: 12,
-              }}
-            >
-              <span>{t("detail.title")}</span>
-
-              <svg
-                width="32"
-                height="32"
-                viewBox="0 0 32 32"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M22.667 22L28.0003 27.3333"
-                  stroke="#BC2626"
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <circle
-                  cx="14.6667"
-                  cy="14.6667"
-                  r="10.6667"
-                  stroke="#BC2626"
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </div>
-
-            {record?._id && (
-              <div className="vbcc-verified" style={{ marginBottom: 0 }}>
+        <div className="vbcc-detail-layout">
+          <div className="vbcc-detail-header">
+            <div className="vbcc-detail-header-left">
+              {onBack && (
+                <div className="vbcc-back-group">
+                  <button
+                    type="button"
+                    className="vbcc-back-button"
+                    onClick={onBack}
+                  >
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M15 10H5M5 10L8.5 6.5M5 10L8.5 13.5"
+                        stroke="currentColor"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                    <span>{t("detail.back")}</span>
+                  </button>
+                  <svg
+                    className="vbcc-header-divider"
+                    width="1"
+                    height="20"
+                    viewBox="0 0 1 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <line
+                      x1="0.5"
+                      y1="0"
+                      x2="0.500001"
+                      y2="20"
+                      stroke="black"
+                      strokeOpacity="0.25"
+                    />
+                  </svg>
+                </div>
+              )}
+              <div className="vbcc-detail-title">
+                <span>{t("detail.title")}</span>
                 <svg
                   width="32"
                   height="32"
                   viewBox="0 0 32 32"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M22.667 22L28.0003 27.3333"
+                    stroke="#134D8B"
+                    strokeWidth="3"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <circle
+                    cx="14.6667"
+                    cy="14.6667"
+                    r="10.6667"
+                    stroke="#134D8B"
+                    strokeWidth="3"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </div>
+            </div>
+
+            {record?._id && (
+              <div className="vbcc-verified">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
                 >
                   <path
                     d="M16 2C13.2311 2 10.5243 2.82109 8.22202 4.35943C5.91973 5.89777 4.12532 8.08427 3.06569 10.6424C2.00607 13.2006 1.72882 16.0155 2.26901 18.7313C2.80921 21.447 4.14258 23.9416 6.10051 25.8995C8.05845 27.8574 10.553 29.1908 13.2687 29.731C15.9845 30.2712 18.7994 29.9939 21.3576 28.9343C23.9157 27.8747 26.1022 26.0803 27.6406 23.778C29.1789 21.4757 30 18.7689 30 16C30 12.287 28.525 8.72602 25.8995 6.10051C23.274 3.475 19.713 2 16 2ZM14 21.5908L9.00001 16.5908L10.5906 15L14 18.4092L21.41 11L23.0057 12.5859L14 21.5908Z"
@@ -128,24 +193,22 @@ const ChiTietVanBang = () => {
                   />
                 </svg>
 
-                <span style={{ fontSize: "20px" }}>
-                  {t("detail.verified")}
-                </span>
+                <span>{t("detail.verified")}</span>
               </div>
             )}
           </div>
 
           {record?._id ? (
-            <Row gutter={[12, 12]}>
+            <Row gutter={[0, 0]} className="vbcc-detail-content">
               <Col span={24}>
                 <div className="vbcc-info-card">
-                  <div className="vbcc-info-title" style={{ fontSize: "20px" }}>
+                  <div className="vbcc-info-title">
                     {t("detail.diploma_info")}
                   </div>
                   <Descriptions
                     column={{ xs: 1, sm: 1, md: 2 }}
                     bordered
-                    size="middle"
+                    size="small"
                     className="vbcc-custom-descriptions"
                   >
                     <Descriptions.Item label={t("detail.fullname")}>
@@ -160,19 +223,25 @@ const ChiTietVanBang = () => {
                         : "--"}
                     </Descriptions.Item>
                     <Descriptions.Item label={t("detail.education_level")}>
-                      {record?.thongTinTrinhDoDaoTao?.ten ??
-                        record?.trinhDoDaoTao ??
-                        "--"}
+                      {translateDynamicValue(
+                        record?.thongTinTrinhDoDaoTao?.ten ??
+                          record?.trinhDoDaoTao,
+                        t,
+                      ) ?? "--"}
                     </Descriptions.Item>
                     <Descriptions.Item label={t("detail.education_form")}>
-                      {record?.thongTinHinhThucDaoTao?.ten ??
-                        record?.hinhThucDaoTao ??
-                        "--"}
+                      {translateDynamicValue(
+                        record?.thongTinHinhThucDaoTao?.ten ??
+                          record?.hinhThucDaoTao,
+                        t,
+                      ) ?? "--"}
                     </Descriptions.Item>
                     <Descriptions.Item label={t("detail.major")}>
-                      {record?.thongTinNganhDaoTao?.ten ??
-                        record?.nganhDaoTao ??
-                        "--"}
+                      {translateDynamicValue(
+                        record?.thongTinNganhDaoTao?.ten ??
+                          record?.nganhDaoTao,
+                        t,
+                      ) ?? "--"}
                     </Descriptions.Item>
                     <Descriptions.Item label={t("detail.book_no")}>
                       {record?.soVaoSoBang ?? "--"}
@@ -189,13 +258,13 @@ const ChiTietVanBang = () => {
 
               <Col span={24}>
                 <div className="vbcc-info-card">
-                  <div className="vbcc-info-title" style={{ fontSize: "20px" }}>
+                  <div className="vbcc-info-title">
                     {t("detail.decision_info")}
                   </div>
                   <Descriptions
                     column={{ xs: 1, sm: 1, md: 2 }}
                     bordered
-                    size="middle"
+                    size="small"
                     className="vbcc-custom-descriptions"
                   >
                     <Descriptions.Item label={t("detail.decision_no")}>
@@ -240,22 +309,24 @@ const ChiTietVanBang = () => {
                         <div className="vbcc-info-card">
                           <div
                             className="vbcc-info-title"
-                            style={{ fontSize: "20px" }}
                           >
                             {t("detail.appendix_info")}
                           </div>
                           <Descriptions
                             bordered
                             column={{ xs: 1, sm: 1, md: 2 }}
-                            size="middle"
+                            size="small"
                             className="vbcc-custom-descriptions"
                           >
                             {valuedElements.map((item, index) => (
                               <Descriptions.Item
-                                label={item.headerName}
+                                label={translateDynamicHeader(
+                                  item.headerName,
+                                  t,
+                                )}
                                 key={index}
                               >
-                                {renderField(item)}
+                                {renderField(item, t)}
                               </Descriptions.Item>
                             ))}
                           </Descriptions>
@@ -268,7 +339,7 @@ const ChiTietVanBang = () => {
                       ?.map((item, index) => {
                         const columns =
                           item?.cot?.map((i) => ({
-                            title: i.headerName,
+                            title: translateDynamicHeader(i.headerName, t),
                             dataIndex: i.headerName,
                             key: i.headerName,
                             width: i.type === "Text" ? 150 : 120,
