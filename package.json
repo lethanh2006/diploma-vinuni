@@ -5,10 +5,14 @@
   "engines": {
     "node": "24.x"
   },
+  "packageManager": "yarn@1.22.22",
   "scripts": {
     "build": "next build",
     "dev": "next dev",
     "start": "next start"
+  },
+  "resolutions": {
+    "art-template": "4.13.2"
   },
   "dependencies": {
     "@ant-design/icons": "4.7.0",
