@@ -1,4 +1,4 @@
-import { Button, Empty, Icon, Table, Tooltip } from "antd";
+import { Empty, Table, Tooltip } from "antd";
 import moment from "moment";
 import React from "react";
 import { useMediaQuery } from "react-responsive";
@@ -8,19 +8,20 @@ import Link from "next/link";
 const KetQuaVanBang = ({ thongTinTraCuu = [], onViewDetail }) => {
   const { t } = useTranslation();
   const isMobile = useMediaQuery({ maxWidth: 767 });
+  const mobileColumnWidth = "max(124px, calc((100vw - 72px) / 2))";
 
   const columns = [
     {
       title: t("index.table.book_no"),
       dataIndex: ["DuLieu", "soVaoSoBang"],
       key: "soVaoSoBang",
-      width: 200,
+      width: isMobile ? mobileColumnWidth : 200,
     },
     {
       title: t("index.table.diploma_no"),
       dataIndex: ["DuLieu", "soHieuVanBang"],
       key: "soHieuVanBang",
-      width: 200,
+      width: isMobile ? mobileColumnWidth : 200,
     },
     {
       title: t("index.table.fullname"),
@@ -124,14 +125,15 @@ const KetQuaVanBang = ({ thongTinTraCuu = [], onViewDetail }) => {
   })) : [];
 
   return (
-    <div style={{ padding: isMobile ? "40px 16px" : "40px 120px", backgroundColor: "#EEF2F8", minHeight: isEmpty ? "414px" : "auto", borderTop: "1px solid #e8e8e8", borderBottom: "1px solid #e8e8e8" }}>
-      <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-        <h3 style={{
+    <div className="vbcc-result-section" style={{ width: "100%", boxSizing: "border-box", padding: isMobile ? "40px 16px" : "40px clamp(24px, 8.333vw, 120px)", backgroundColor: "#EEF2F8", minHeight: isEmpty ? "414px" : "auto", borderTop: "1px solid #e8e8e8", borderBottom: "1px solid #e8e8e8" }}>
+      <div className="vbcc-result-container" style={{ width: "100%", maxWidth: "1200px", margin: "0 auto" }}>
+        <h3 className="vbcc-result-heading" style={{
           display: "flex",
           flexDirection: "row",
           alignItems: "center",
           padding: "0px",
           gap: "12px",
+          marginTop: 0,
           marginBottom: isEmpty ? "48px" : "24px"
         }}>
           <span style={{
@@ -140,7 +142,8 @@ const KetQuaVanBang = ({ thongTinTraCuu = [], onViewDetail }) => {
             fontWeight: 600,
             fontSize: isMobile ? "18px" : "24px",
             lineHeight: "135%",
-            color: "#2E2E2E"
+            color: "#2E2E2E",
+            whiteSpace: "nowrap"
           }}>
             {t("index.table.search_result_header")}
           </span>
@@ -199,7 +202,10 @@ const KetQuaVanBang = ({ thongTinTraCuu = [], onViewDetail }) => {
             </span>
           </div>
         ) : (
-          <div style={{
+          <div className="vbcc-result-table-card" style={{
+            width: "100%",
+            boxSizing: "border-box",
+            overflow: "hidden",
             background: "#FFFFFF",
             borderRadius: "16px",
             padding: "20px",
@@ -209,7 +215,7 @@ const KetQuaVanBang = ({ thongTinTraCuu = [], onViewDetail }) => {
               className="custom-table-vbcc"
               columns={columns}
               dataSource={dataSource}
-              scroll={isMobile ? { x: 'max-content' } : undefined}
+              scroll={isMobile ? { x: "max-content" } : undefined}
               pagination={false}
               locale={{
                 emptyText: (
@@ -288,6 +294,46 @@ const KetQuaVanBang = ({ thongTinTraCuu = [], onViewDetail }) => {
           }
           .custom-table-vbcc .ant-table-tbody > tr:hover > td {
             background: #FFFFFF !important;
+          }
+          @media (max-width: 767px) {
+            .vbcc-result-section,
+            .vbcc-result-container,
+            .vbcc-result-table-card,
+            .custom-table-vbcc {
+              width: 100% !important;
+              max-width: 100% !important;
+              min-width: 0 !important;
+              box-sizing: border-box !important;
+            }
+            .vbcc-result-heading {
+              justify-content: flex-start !important;
+              width: 100% !important;
+              text-align: left !important;
+            }
+            .custom-table-vbcc .ant-table-body {
+              overflow-x: auto !important;
+              -webkit-overflow-scrolling: touch;
+              scrollbar-width: none;
+              -ms-overflow-style: none;
+            }
+            .custom-table-vbcc .ant-table-body::-webkit-scrollbar {
+              display: none;
+              width: 0;
+              height: 0;
+            }
+          }
+          @media (max-width: 360px) {
+            .custom-table-vbcc .ant-table-thead > tr > th {
+              padding: 12px 8px !important;
+              font-size: 11px !important;
+            }
+            .custom-table-vbcc .ant-table-thead > tr > th * {
+              font-size: 11px !important;
+            }
+            .custom-table-vbcc .ant-table-tbody > tr > td {
+              padding: 12px 8px !important;
+              font-size: 13px !important;
+            }
           }
         `}</style>
     </div>

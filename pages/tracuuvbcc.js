@@ -74,7 +74,7 @@ const TraCuuVanBangChungChi = (props) => {
   return (
     <Row style={{ width: "100%" }}>
       <Spin spinning={!!loading}>
-        <SectionWrapper id="daotao">
+        <SectionWrapper id="daotao" className="vbcc-montserrat">
           {isMobile && (
             <Container fullWidth noGutter>
               <div style={{ ...heroBackgroundStyle, padding: "124px 16px 24px" }}>

@@ -33,7 +33,7 @@ const GlobalFooter = () => {
         </svg>
         <div className="logo-container">
           <img
-            src="/assets/image/iconfooter.png"
+            src="/assets/image/iconfooter.svg"
             alt="VinUniversity Logo"
             className="footer-logo-img"
           />
@@ -281,6 +281,7 @@ const GlobalFooter = () => {
         .footer-link.short-width {
           width: 205px;
           flex-grow: 0;
+          white-space: nowrap;
         }
 
         .footer-link:hover {

@@ -455,7 +455,7 @@ const Navbar = ({ navbarStyle, logoStyle, button, row, menuWrapper }) => {
         <TopRow>
           <PortalLinks>
             <PortalLink href="https://vinuni.edu.vn" target="_blank" rel="noreferrer">
-              Về VinUni
+              {t("footer.ve_vinuni")}
             </PortalLink>
             <Divider />
             <PortalLink href="https://vinuni.edu.vn/academics" target="_blank" rel="noreferrer">
@@ -473,7 +473,7 @@ const Navbar = ({ navbarStyle, logoStyle, button, row, menuWrapper }) => {
         <BottomRow>
           <LogoArea href="/">
             <LogoImg
-              src="/assets/image/textngang.png"
+              src="/assets/image/textngang.svg"
               alt="VinUni Logo"
             />
           </LogoArea>

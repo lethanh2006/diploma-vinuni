@@ -1,10 +1,14 @@
+.vbcc-container,
+.vbcc-container *:not(.anticon) {
+    font-family: 'Montserrat', sans-serif;
+}
+
 .vbcc-container {
     box-sizing: border-box;
     width: 100%;
     min-height: 846px;
     padding: 40px clamp(24px, 8.333vw, 120px);
     background: #EEF2F8;
-    font-family: 'Montserrat', sans-serif;
 }
 
 .vbcc-detail-layout {
@@ -310,20 +314,40 @@
 
     .vbcc-detail-header,
     .vbcc-detail-header-left {
-        gap: 12px;
+        gap: 16px;
     }
 
     .vbcc-detail-header-left {
-        align-items: flex-start;
+        align-items: center;
         flex-wrap: wrap;
         width: 100%;
         max-width: 100%;
         height: auto;
     }
 
-    .vbcc-detail-title {
-        flex: 1 1 280px;
+    .vbcc-back-group {
+        flex: 0 0 auto;
+        align-self: auto;
         width: auto;
+        height: 24px;
+        gap: 0;
+    }
+
+    .vbcc-back-button {
+        flex: 0 0 auto;
+        width: auto;
+        height: 24px;
+    }
+
+    .vbcc-header-divider {
+        display: none;
+    }
+
+    .vbcc-detail-title {
+        flex: 0 0 100%;
+        justify-content: space-between;
+        gap: 16px;
+        width: 100%;
         height: auto;
         font-size: 20px;
 
@@ -335,9 +359,27 @@
         }
     }
 
+    .vbcc-verified {
+        height: auto;
+        min-height: 36px;
+        font-size: 14px;
+    }
+
     .vbcc-custom-descriptions {
         .ant-descriptions-item-label {
             width: 42%;
+        }
+    }
+}
+
+@media (max-width: 360px) {
+    .vbcc-detail-title {
+        font-size: 18px;
+
+        svg {
+            flex-basis: 28px;
+            width: 28px;
+            height: 28px;
         }
     }
 }

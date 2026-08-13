@@ -10,9 +10,9 @@ module.exports = {
     enter_cccd: "Enter",
     student_id: "Student ID",
     enter_student_id: "Enter",
-    diploma_no: "Diploma Number",
+    diploma_no: "Serial Number",
     enter_diploma_no: "Enter",
-    book_no: "Registration Number",
+    book_no: "Reference Number",
     example_book_no: "Enter",
     search_button: "SEARCH"
   },

@@ -1,5 +1,10 @@
 import styled from "styled-components";
 const SectionWrapper = styled.section`
+  &.vbcc-montserrat,
+  &.vbcc-montserrat *:not(.anticon) {
+    font-family: 'Montserrat', sans-serif;
+  }
+
   @media (max-width: 990px) {
     padding: 80px 0 40px 0;
   }
