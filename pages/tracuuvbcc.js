@@ -36,23 +36,22 @@ const TraCuuVanBangChungChi = (props) => {
 
     setloading(true);
     setSelectedId(null);
-    const data = await axios.post(
-      `${ipPTIT}vbcc/phu-luc-van-bang/public/tra-cuu-phu-luc-van-bang`,
-      values
-    );
-    const arr = data?.data?.data?.result ?? [];
-    if (arr.length === 0) {
-      Modal.error({
-        title: t("index.messages.warning"),
-        content: t("index.messages.no_info_found"),
-        onOk() { },
-      });
+    try {
+      const data = await axios.post(
+        `${ipPTIT}vbcc/phu-luc-van-bang/public/tra-cuu-phu-luc-van-bang`,
+        values
+      );
+      const arr = data?.data?.data?.result ?? [];
+      if (!Array.isArray(arr) || arr.length === 0) {
+        setds({ Error: true });
+        return;
+      }
+      setds(arr);
+    } catch (error) {
+      setds({ Error: true });
+    } finally {
       setloading(false);
-      setds([]);
-      return;
     }
-    setds(arr ?? []);
-    setloading(false);
   };
 
   const tieuDeKQ = props.tieuDe;

@@ -109,16 +109,10 @@ const KetQuaVanBang = ({ thongTinTraCuu = [], onViewDetail }) => {
     },
   ];
 
-  if (thongTinTraCuu?.Error) {
-    return (
-      <div style={{ padding: 16, textAlign: "center" }}>
-        <i style={{ color: "red" }}>{t("index.table.no_result_msg")}</i>
-      </div>
-    );
-  }
-
-  const isEmpty = !thongTinTraCuu || thongTinTraCuu.length === 0;
-  const dataSource = !isEmpty ? thongTinTraCuu?.map((item, index) => ({
+  const hasError = Boolean(thongTinTraCuu?.Error);
+  const isEmpty =
+    !Array.isArray(thongTinTraCuu) || thongTinTraCuu.length === 0;
+  const dataSource = !isEmpty ? thongTinTraCuu.map((item, index) => ({
     ...item,
     stt: index + 1,
     key: item?._id || index,
@@ -197,14 +191,18 @@ const KetQuaVanBang = ({ thongTinTraCuu = [], onViewDetail }) => {
               boxSizing: "border-box",
               textAlign: "center",
               textWrap: "balance",
-              fontStyle: "normal",
+              fontStyle: hasError ? "italic" : "normal",
               fontWeight: 500,
               fontSize: "clamp(12px, 3.8vw, 20px)",
               lineHeight: "135%",
               letterSpacing: "0.03em",
-              color: "#373D4E"
+              color: hasError ? "#FF0000" : "#373D4E"
             }}>
-              {t("index.table.fill_info_prompt")}
+              {t(
+                hasError
+                  ? "index.table.no_result_msg"
+                  : "index.table.fill_info_prompt"
+              )}
             </span>
           </div>
         ) : (

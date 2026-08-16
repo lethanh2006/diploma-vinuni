@@ -1,6 +1,8 @@
 module.exports = {
   quick_links: "Quick Links",
   ve_vinuni: "VinUni Portal",
+  academic: "Academic",
+  admission: "Admission",
   vien_khxh: "College of Arts and Sciences",
   vien_kddqt: "College of Business & Management",
   vien_ktkhmt: "College of Engineering & Computer Science",

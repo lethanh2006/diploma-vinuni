@@ -458,12 +458,24 @@ const Navbar = ({ navbarStyle, logoStyle, button, row, menuWrapper }) => {
               {t("footer.ve_vinuni")}
             </PortalLink>
             <Divider />
-            <PortalLink href="https://vinuni.edu.vn/academics" target="_blank" rel="noreferrer">
-              Academic
+            <PortalLink
+              href={isEN
+                ? "https://vinuni.edu.vn/academics/home/"
+                : "https://vinuni.edu.vn/vi/academics/dao-tao/"}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {t("footer.academic")}
             </PortalLink>
             <Divider />
-            <PortalLink href="https://vinuni.edu.vn/admissions" target="_blank" rel="noreferrer">
-              Admission
+            <PortalLink
+              href={isEN
+                ? "https://admissions.vinuni.edu.vn/"
+                : "https://admissions.vinuni.edu.vn/vi/trang-chu/"}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {t("footer.admission")}
             </PortalLink>
           </PortalLinks>
 

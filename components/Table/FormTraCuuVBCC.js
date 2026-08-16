@@ -2,14 +2,18 @@ import {
   Button,
   Card,
   Col,
+  ConfigProvider,
   DatePicker,
   Form,
   Input,
   notification,
   Row,
 } from "antd";
+import enUS from "antd/lib/locale-provider/en_US";
+import viVN from "antd/lib/locale-provider/vi_VN";
 import capbangdiemsohieu from "assets/image/sohieuvb.png";
 import moment from "moment";
+import "moment/locale/vi";
 import React from "react";
 import { color } from "styled-system";
 import { useTranslation } from "components/Utils/useTranslation";
@@ -25,8 +29,9 @@ const openNotification = () => {
 };
 
 const FormTraCuuVBCC = (props) => {
-  const { t } = useTranslation();
+  const { t, locale } = useTranslation();
   const { getFieldDecorator } = props.form;
+  const datePickerLocale = locale === "en-US" ? enUS : viVN;
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -84,14 +89,16 @@ const FormTraCuuVBCC = (props) => {
                 <Form.Item
                   label={<span>{t("index.form.dob")}</span>}
                 >
-                  {getFieldDecorator("ngaySinh")(
-                    <DatePicker
-                      size="large"
-                      style={{ width: "100%", fontSize: "14px" }}
-                      format={"DD/MM/YYYY"}
-                      placeholder={t("index.form.select_dob")}
-                    />,
-                  )}
+                  <ConfigProvider key={locale} locale={datePickerLocale}>
+                    {getFieldDecorator("ngaySinh")(
+                      <DatePicker
+                        size="large"
+                        style={{ width: "100%", fontSize: "14px" }}
+                        format={"DD/MM/YYYY"}
+                        placeholder={t("index.form.select_dob")}
+                      />,
+                    )}
+                  </ConfigProvider>
                 </Form.Item>
               </Col>
               <Col xs={24} md={8}>

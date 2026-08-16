@@ -3,17 +3,17 @@ module.exports = {
   prompt: "Vui lòng nhập thông tin để tra cứu",
   form: {
     fullname: "Họ tên",
-    enter_fullname: "Enter",
+    enter_fullname: "Nhập họ tên",
     dob: "Ngày sinh",
-    select_dob: "Select",
+    select_dob: "Chọn ngày sinh",
     cccd: "CCCD",
-    enter_cccd: "Enter",
+    enter_cccd: "Nhập CCCD",
     student_id: "Mã sinh viên",
-    enter_student_id: "Enter",
+    enter_student_id: "Nhập mã sinh viên",
     diploma_no: "Số hiệu văn bằng",
-    enter_diploma_no: "Enter",
+    enter_diploma_no: "Nhập số hiệu văn bằng",
     book_no: "Số vào sổ",
-    example_book_no: "Enter",
+    example_book_no: "Ví dụ: TS25/{soVaoSo}",
     search_button: "TRA CỨU THÔNG TIN"
   },
   table: {

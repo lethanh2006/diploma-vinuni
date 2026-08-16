@@ -3,17 +3,17 @@ module.exports = {
   prompt: "Please enter the information to search",
   form: {
     fullname: "Full Name",
-    enter_fullname: "Enter",
+    enter_fullname: "Enter full name",
     dob: "Date of Birth",
-    select_dob: "Select",
+    select_dob: "Select date of birth",
     cccd: "National ID Number",
-    enter_cccd: "Enter",
+    enter_cccd: "Enter national ID number",
     student_id: "Student ID",
-    enter_student_id: "Enter",
+    enter_student_id: "Enter student ID",
     diploma_no: "Serial Number",
-    enter_diploma_no: "Enter",
+    enter_diploma_no: "Enter serial number",
     book_no: "Reference Number",
-    example_book_no: "Enter",
+    example_book_no: "Example: TS25/{soVaoSo}",
     search_button: "SEARCH"
   },
   table: {
