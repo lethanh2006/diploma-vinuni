@@ -1,0 +1,81 @@
+// @ts-nocheck
+// import Sticky from 'react-stickynode';
+// import { DrawerProvider } from 'common/src/contexts/DrawerContext';
+// import Navbar from 'common/src/containers/Hosting/Navbar';
+// import Footer from 'common/src/components/Footer/index';
+import { Affix, Button, Icon } from "antd";
+import { ResetCSS } from "assets/css/style";
+import Navbar from "components/Navbar";
+// import Navbar from '../../../common/src/containers/Hosting/Navbar'
+import Footer from "components/Footer/index";
+import Head from "next/head";
+// import Footer from 'common/src/containers/Hosting/Footer';
+import { ParallaxProvider } from "react-scroll-parallax";
+import Sticky from "react-stickynode";
+import { ThemeProvider } from "styled-components";
+import { hostingTheme } from "./hosting";
+import { ContentWrapper, GlobalStyle } from "./hosting.style";
+
+export const siteTitle = "VinUni Cổng tra cứu văn bằng";
+const siteDescription = "Cổng tra cứu và xác thực thông tin văn bằng VinUni";
+
+
+export default function Layout({ children, home }) {
+  const scrollToTop = () => {
+    if (window) {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  return (
+    <div>
+      <Head>
+        <link rel="icon" type="image/png" href="/assets/image/logo_vinuni.png" />
+        <link rel="shortcut icon" type="image/png" href="/assets/image/logo_vinuni.png" />
+        <link rel="apple-touch-icon" href="/assets/image/logo.png" />
+        <link rel="prefetch" href="/assets/image/metadata.png" />
+        <title>{siteTitle}</title>
+        <meta name="description" content={siteDescription} />
+        <meta name="theme-color" content="#134D8B" />
+        <meta property="og:title" content={siteTitle} />
+        <meta property="og:description" content={siteDescription} />
+        <meta property="og:image" content="/assets/image/metadata.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
+      {/* navbar */}
+
+      <ThemeProvider theme={hostingTheme}>
+        <ParallaxProvider>
+          <ResetCSS />
+          <GlobalStyle />
+
+          <ContentWrapper>
+            <Navbar />
+
+            {children}
+            <Footer />
+            <Affix offsetBottom={200} innerZ={99999}>
+              <Button
+                type="primary"
+                style={{
+                  float: "right",
+                  margin: 20,
+                  backgroundColor: "#134D8B",
+                  borderColor: "#134D8B",
+                  borderRadius: "40%",
+                }}
+                onClick={scrollToTop}
+              >
+                <Icon type="arrow-up" />
+              </Button>
+            </Affix>
+          </ContentWrapper>
+        </ParallaxProvider>
+      </ThemeProvider>
+    </div>
+  );
+}

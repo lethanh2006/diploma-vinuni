@@ -1,3 +1,4 @@
+// @ts-nocheck
 /* eslint-disable react/prefer-stateless-function */
 import { Col, Row } from "antd";
 import axios from "axios";
@@ -16,7 +17,7 @@ import {
   Group94Wrapper,
   Group96Wrapper,
   Title,
-} from "./index.style.js";
+} from "./index.style";
 
 const toeicResult = () => {
   window.open("/chungchi/", "_self");
