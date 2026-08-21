@@ -10,10 +10,9 @@ import "./style.less";
 import { fontSize } from "styled-system";
 import { useTranslation } from "components/Utils/useTranslation";
 
-const PDFViewerV2 = dynamic(
-  () => import("../../components/PDFViewerV2"),
-  { ssr: false },
-);
+const PDFViewerV2 = dynamic(() => import("../../components/PDFViewerV2"), {
+  ssr: false,
+});
 
 const normalizeLocalizedText = (value) =>
   typeof value === "string" ? value.trim().toLocaleLowerCase("vi") : "";
@@ -84,7 +83,7 @@ const ChiTietVanBang = ({ id, onBack }) => {
     setLoading(true);
     try {
       const res = await axios.get(
-        `${ipPTIT}vbcc/phu-luc-van-bang/public/chi-tiet-phu-luc/${targetId}`,
+        `${ipPTIT}qldt-test/phu-luc-van-bang/public/chi-tiet-phu-luc/${targetId}`,
       );
       setRecord(res?.data?.data || {});
     } catch (error) {

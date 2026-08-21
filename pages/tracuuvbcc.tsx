@@ -23,7 +23,7 @@ const TraCuuVanBangChungChi = (props) => {
 
   const traCuu = async (values) => {
     const filledFields = Object.entries(values).filter(
-      ([key, value]) => key !== "mucDichTraCuuId" && !!value
+      ([key, value]) => key !== "mucDichTraCuuId" && !!value,
     ).length;
 
     if (filledFields < 2) {
@@ -38,8 +38,8 @@ const TraCuuVanBangChungChi = (props) => {
     setSelectedId(null);
     try {
       const data = await axios.post(
-        `${ipPTIT}vbcc/phu-luc-van-bang/public/tra-cuu-phu-luc-van-bang`,
-        values
+        `${ipPTIT}qldt-test/phu-luc-van-bang/public/tra-cuu-phu-luc-van-bang`,
+        values,
       );
       const arr = data?.data?.data?.result ?? [];
       if (!Array.isArray(arr) || arr.length === 0) {
@@ -76,11 +76,11 @@ const TraCuuVanBangChungChi = (props) => {
         <SectionWrapper id="daotao" className="vbcc-montserrat">
           {isMobile && (
             <Container fullWidth noGutter>
-              <div style={{ ...heroBackgroundStyle, padding: "124px 16px 24px" }}>
+              <div
+                style={{ ...heroBackgroundStyle, padding: "124px 16px 24px" }}
+              >
                 <div style={{ width: "100%", margin: "0 auto" }}>
-                  <div style={{ marginBottom: 12 }}>
-                    {tieuDeKQ}
-                  </div>
+                  <div style={{ marginBottom: 12 }}>{tieuDeKQ}</div>
                   <div style={{ width: "100%" }}>
                     <FormTraCuu
                       onSubmit={(values) => traCuu(values)}
@@ -107,8 +107,19 @@ const TraCuuVanBangChungChi = (props) => {
           )}
           {!isMobile && (
             <Container fullWidth noGutter>
-              <div style={{ ...heroBackgroundStyle, padding: "205px 24px 93px 24px" }}>
-                <div style={{ maxWidth: "1100px", width: "100%", margin: "0 auto" }}>
+              <div
+                style={{
+                  ...heroBackgroundStyle,
+                  padding: "205px 24px 93px 24px",
+                }}
+              >
+                <div
+                  style={{
+                    maxWidth: "1100px",
+                    width: "100%",
+                    margin: "0 auto",
+                  }}
+                >
                   <Col lg={24} style={{ marginBottom: 50 }}>
                     {tieuDeKQ}
                   </Col>

@@ -15,7 +15,7 @@ const SelectMucDichTraCuuPublic = (props) => {
     const fetchData = async () => {
       try {
         const res = await axios.get(
-          `${ipPTIT}vbcc/muc-dich-tra-cuu-phu-luc/public/many`
+          `${ipPTIT}qldt-test/muc-dich-tra-cuu-phu-luc/public/many`,
         );
         const data = res.data?.data || [];
         setDanhSach(data);
